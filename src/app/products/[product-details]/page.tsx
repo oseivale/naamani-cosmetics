@@ -19,9 +19,9 @@ export async function generateMetadata({
   params: { "product-details": string }
 }): Promise<Metadata> {
 
- const parameters = await params["product-details"]
+ const parameters = await params
 
-  const product = await getProduct(parameters);
+  const product = await getProduct(parameters["product-details"]);
 
   if (!product) {
     return {
@@ -29,7 +29,6 @@ export async function generateMetadata({
     };
   }
 
-  console.log('params', params)
   return {
     title: `${product.name} - Shop Now`,
     description: product.description,
@@ -42,9 +41,10 @@ export default async function ProductPage({
   params: { "product-details": string };
 }) {
 
-  const parameters = await params["product-details"]
+  const parameters = await params
 
-  const product = await getProduct(parameters);
+  console.log('parameters', parameters)
+  const product = await getProduct(parameters["product-details"]);
 
 
   if (!product) {
