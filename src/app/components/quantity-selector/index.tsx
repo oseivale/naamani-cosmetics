@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./styles.module.css";
 import { Minus } from "@/app/icons/minus";
 import { Add } from "@/app/icons/add";
@@ -13,14 +12,12 @@ type QuantitySelectorProps = {
 };
 
 export default function QuantitySelector({
-  onQuantityChange,
-  initialQuantity = 1,
   quantityTest
   
 }: QuantitySelectorProps) {
 //   const [quantity, setQuantity] = useState(initialQuantity);
 
-  const { cart, handleIncrease, handleDecrease, quantity } =
+  const { handleIncrease, handleDecrease } =
     useCart();
 
 //   const handleIncrease = () => {

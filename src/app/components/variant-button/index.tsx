@@ -17,7 +17,7 @@ export default function VariantButton({ variant }: VariantButtonProps) {
   //   const handleClick = () => { 
   //     setSelectedVariant(variant);
   //   };
-  const { cart, handleSizeChange, size } =
+  const { handleSizeChange, size } =
   useCart();
 
   const isActive = size === variant

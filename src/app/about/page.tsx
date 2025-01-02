@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./styles.module.css";
 import PageBanner from "../components/page-wrapper";
 import AlternatingRow from "../components/page-row";

@@ -1,7 +1,14 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 
-export default function ProductCard({ name, price, description, id}: any) {
+interface ProductCardProps {
+  name: string;
+  price: number;
+  description: string; 
+  id: string; 
+}
+
+export default function ProductCard({ name, price, description, id}: ProductCardProps) {
   return (
     <Link className={styles.productCardWrapper} href={`/products/${id}`}>
       <div className={styles.productCard}>

@@ -6,7 +6,7 @@ import { Arrow } from "@/app/icons/arrow";
 
 type AccordionItem = {
   title: string;
-  content: any;
+  content: string | React.ReactNode;
 };
 
 type AccordionProps = {

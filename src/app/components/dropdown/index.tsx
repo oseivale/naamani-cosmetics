@@ -13,11 +13,7 @@ export default function Dropdown({ options, label }: DropdownProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleVariantSelect = (selectedOption: string) => {
-    console.log("Selected Variant:", selectedOption);
-  };
-
-  const { cart, handleScentChange } =
+  const { handleScentChange } =
     useCart();
 
   const handleSelect = (value: string) => {

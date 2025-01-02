@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import { Arrow } from "@/app/icons/arrow";
-import Image from "next/image";
 
 export default function HeroBanner() {
   const [animateTextSection, setAnimateTextSection] = useState(false);

@@ -1,15 +1,10 @@
-import Image from "next/image";
 import { Metadata } from "next";
 import styles from "./styles.module.css";
-import Tabs from "@/app/components/tabs";
 import { products } from "@/app/data/products";
-import { Add } from "@/app/icons/add";
-import { Minus } from "@/app/icons/minus";
 import Accordion from "@/app/components/accordion";
 import Dropdown from "@/app/components/dropdown";
 import VariantButton from "@/app/components/variant-button";
 import ProductImageGallery from "@/app/components/product-image-gallery";
-import { CartAdd } from "@/app/icons/cart-add";
 import AddToCartButton from "@/app/components/add-to-cart-button";
 
 // Mock function to simulate a database call or API call
@@ -51,12 +46,6 @@ export default async function ProductPage({
       </div>
     );
   }
-
-  const variantOptions = ["Small", "Medium", "Large", "Extra Large"];
-
-  const handleVariantSelect = (selectedOption: string) => {
-    console.log("Selected Variant:", selectedOption);
-  };
 
   return (
     <div className={styles.container}>

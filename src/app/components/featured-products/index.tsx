@@ -3,8 +3,9 @@ import ProductCard from "../product-card";
 import styles from "./styles.module.css";
 
 export default function FeaturedProducts() {
-
-  const filteredProducts = products.filter(product => product.featured === true)
+  const filteredProducts = products.filter(
+    (product) => product.featured === true
+  );
   return (
     <section className={styles.sectionWrapper}>
       <div className={styles.container}>
@@ -13,6 +14,7 @@ export default function FeaturedProducts() {
           {filteredProducts.map((product) => {
             return (
               <ProductCard
+                key={product.id}
                 name={product.name}
                 price={product.price}
                 description={product.description}

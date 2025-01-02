@@ -1,6 +1,5 @@
 import { Instagram } from "@/app/icons/instagram";
 import styles from "./styles.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import { NaamaniSecond } from "@/app/logos/naamani-second";
 

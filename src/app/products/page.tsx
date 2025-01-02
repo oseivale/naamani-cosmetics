@@ -5,7 +5,6 @@ import ProductFilter from "../components/product-filter";
 import ProductGrid from "../components/product-grid";
 import { products as initialProducts } from "../data/products";
 import PageBanner from "../components/page-wrapper";
-import { useCart } from "../contexts/cart";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState(initialProducts);

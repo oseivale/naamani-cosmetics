@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import QuantitySelector from "../components/quantity-selector";
+// import QuantitySelector from "../components/quantity-selector";
 import { useCart } from "../contexts/cart";
 import { Trash } from "../icons/trash";
 import styles from "./styles.module.css";
@@ -13,15 +13,15 @@ export default function CartPage() {
   const { cart, removeFromCart, totalItems, clearCart, totalAmount, updateLineItemQuantity } =
     useCart();
 
-  const [updatedQuantity, setUpdatedQuantity] = useState(1);
+  // const [updatedQuantity, setUpdatedQuantity] = useState(1);
 
   if (cart.length === 0) {
     return <p>Your cart is empty.</p>;
   }
 
-  const handleQuantityChange = (quantity: number) => {
-    setUpdatedQuantity(quantity);
-  };
+  // const handleQuantityChange = (quantity: number) => {
+  //   setUpdatedQuantity(quantity);
+  // };
 
   return (
     <div>

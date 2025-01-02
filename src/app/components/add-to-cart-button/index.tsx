@@ -3,7 +3,6 @@
 import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
-import { useState } from "react";
 import QuantitySelector from "../quantity-selector";
 
 type AddToCartButtonProps = {
@@ -22,9 +21,6 @@ export default function AddToCartButton({
   const {
     addToCart,
     cart,
-    isCartDrawerOpen,
-    triggerCartDrawerOpen,
-    triggerCartDrawerClose,
     quantity,
     size,
     scent,

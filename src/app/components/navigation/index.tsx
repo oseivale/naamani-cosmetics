@@ -2,20 +2,16 @@
 
 import { useState } from "react";
 import styles from "./styles.module.css";
-import { Cart } from "@/app/icons/cart";
 import { Bag } from "@/app/icons/bag";
 import Link from "next/link";
 import { NaamaniMain } from "@/app/logos/naamani-main";
-import { EB_Garamond } from "next/font/google";
 import { Hamburger } from "@/app/icons/hamburger";
 import { useCart } from "@/app/contexts/cart";
 import { Trash } from "@/app/icons/trash";
-import { Minus } from "@/app/icons/minus";
-import { Add } from "@/app/icons/add";
+
 
 export default function Navigation() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const {
     cart,
@@ -23,9 +19,6 @@ export default function Navigation() {
     triggerCartDrawerOpen,
     triggerCartDrawerClose,
     totalItems,
-    handleDecrease,
-    handleIncrease,
-    updateQuantity,
     totalAmount
   } = useCart();
 
@@ -46,9 +39,9 @@ export default function Navigation() {
 
         {/* Logo */}
         <div className={styles.logo}>
-          <a href="/">
+          <Link href="/">
             <NaamaniMain />
-          </a>
+          </Link>
         </div>
 
         {/* Navigation Links - Desktop Only */}
