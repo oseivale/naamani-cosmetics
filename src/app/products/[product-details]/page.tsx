@@ -6,6 +6,7 @@ import Dropdown from "@/app/components/dropdown";
 import VariantButton from "@/app/components/variant-button";
 import ProductImageGallery from "@/app/components/product-image-gallery";
 import AddToCartButton from "@/app/components/add-to-cart-button";
+import Link from "next/link";
 
 // Mock function to simulate a database call or API call
 async function getProduct(id: string) {
@@ -51,7 +52,7 @@ export default async function ProductPage({
     <div className={styles.container}>
       {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
-        <a href="/">Home</a> &gt; <a href="/products">All Products</a> &gt;{" "}
+        <Link href="/">Home</Link> &gt; <Link href="/products">All Products</Link> &gt;{" "}
         {product.name}
       </div>
 
@@ -157,7 +158,7 @@ export default async function ProductPage({
           />
           <div className={styles.askButton}>
             <span>Questions? </span>
-            <a href="#">Ask about this product</a>
+            <Link href="#">Ask about this product</Link>
           </div>
 
           {/* <div className={styles.share}>

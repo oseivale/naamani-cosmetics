@@ -1,6 +1,4 @@
 "use client";
-
-import { useState } from "react";
 // import QuantitySelector from "../components/quantity-selector";
 import { useCart } from "../contexts/cart";
 import { Trash } from "../icons/trash";
