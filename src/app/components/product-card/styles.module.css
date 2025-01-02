@@ -82,4 +82,8 @@
   .productLink {
     opacity: 1;
   }
+
+  .productCardWrapper {
+    margin-bottom: 2rem;
+  }
 }
