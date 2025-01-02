@@ -31,7 +31,7 @@ type CartContextType = {
   handleQuantityChange: (quantity: number) => void;
   handleSizeChange: (size: string) => void;
   handleScentChange: (scent: string) => void;
-  updateLineItemQuantity: (id: string, size: string, quantity: number, scent?: string) => void;
+  updateLineItemQuantity: (id: string, quantity: number, size?: string, scent?: string) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -155,8 +155,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     // Update the quantity of a specific line item
     const updateLineItemQuantity = (
       id: string,
-      size: string,
+      
       quantity: number,
+      size?: string,
       scent?: string
     ) => {
       setCart((prevCart) =>

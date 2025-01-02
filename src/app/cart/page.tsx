@@ -8,8 +8,14 @@ import { Minus } from "../icons/minus";
 import { Add } from "../icons/add";
 
 export default function CartPage() {
-  const { cart, removeFromCart, totalItems, clearCart, totalAmount, updateLineItemQuantity } =
-    useCart();
+  const {
+    cart,
+    removeFromCart,
+    totalItems,
+    clearCart,
+    totalAmount,
+    updateLineItemQuantity,
+  } = useCart();
 
   // const [updatedQuantity, setUpdatedQuantity] = useState(1);
 
@@ -34,13 +40,12 @@ export default function CartPage() {
             <img src={item.image} alt={item.name} width={50} height={50} />
             <div className={styles.cartData}>
               <h2 className={styles.itemName}>{item.name}</h2>
-              {item.scent ||
-                item.size ? (
-                  <div className={styles.variantWrapper}>
-                    <p>{item.scent}</p>
-                    <p>({item.size})</p>
-                  </div>
-                ): null}
+              {item.scent || item.size ? (
+                <div className={styles.variantWrapper}>
+                  <p>{item.scent}</p>
+                  <p>({item.size})</p>
+                </div>
+              ) : null}
 
               <p>${item.price.toFixed(2)}</p>
 
@@ -58,26 +63,35 @@ export default function CartPage() {
                   onQuantityChange={handleQuantityChange}
                   quantityTest={item.quantity}
                 /> */}
-                 <div className={styles.quantity}>
+                <div className={styles.quantity}>
                   <button
-                  className={styles.quantityBtn}
+                    className={styles.quantityBtn}
                     onClick={() =>
-                      updateLineItemQuantity(item.id, item.size, Math.max(1, item.quantity - 1), item.scent)
+                      updateLineItemQuantity(
+                        item.id,
+                        Math.max(1, item.quantity - 1),
+                        item.size,
+                        item.scent
+                      )
                     }
                   >
-                     <Minus />
+                    <Minus />
                   </button>
                   <span className={styles.quantityInput}>{item.quantity}</span>
                   <button
-                  className={styles.quantityBtn}
+                    className={styles.quantityBtn}
                     onClick={() =>
-                      updateLineItemQuantity(item.id, item.size, item.quantity + 1, item.scent)
+                      updateLineItemQuantity(
+                        item.id,
+                        item.quantity + 1,
+                        item.size,
+                        item.scent
+                      )
                     }
                   >
-                     <Add />
+                    <Add />
                   </button>
                 </div>
-                
 
                 {/* <div className={styles.quantity}>
       <button className={styles.quantityBtn} onClick={() =>
@@ -94,7 +108,6 @@ export default function CartPage() {
       </button>
     </div> */}
 
-                
                 <button
                   className={styles.removeBtn}
                   onClick={() => removeFromCart(item.id)}
