@@ -94,7 +94,7 @@ export default async function ProductPage({
             {product?.variants?.map((variant) => {
               // return <button className={styles.variant}>{variant.size}</button>;
               if (product.variants.length > 1)
-                return <VariantButton variant={variant.size} />;
+                return <VariantButton key={variant.id} variant={variant.size} />;
             })}
           </div>
           {product?.scents && (
@@ -142,8 +142,8 @@ export default async function ProductPage({
                   <div className={styles.directions}>
                     <h3>Directions for Use</h3>
                     <ol>
-                      {product?.directions?.split("|").map((direction) => (
-                        <li>{direction}</li>
+                      {product?.directions?.split("|").map((direction, index) => (
+                        <li key={index}>{direction}</li>
                       ))}
                     </ol>
                   </div>

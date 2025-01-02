@@ -62,10 +62,12 @@ export  const products = [
         scents: ['Lavender Vanilla', 'Lemon Verbena', 'Unscented'],
         variants: [
             {
+              id: 'db5c3c3a-2db0-49f5-b1b2-a6ef335c963d',
                 size: '2oz',
                 price: 8,
             },
             {
+              id: 'd8cc5c11-77d4-4e55-b951-fa4961778b7e',
                 size: '8oz',
                 price: 25,
             },
@@ -111,6 +113,7 @@ export  const products = [
         variants: [
            
             {
+              id: '6deaae11-b964-43cc-9bad-ae8dc7e4746f',
                 size: '30ml',
                 price: 25,
                 
@@ -152,6 +155,7 @@ export  const products = [
         scents: null,
         variants: [
             {
+              id: '7566aa3d-b755-4f3f-a6d4-7e77db8ffbc8',
                 size: '2oz',
                 price: 37,
             },
@@ -194,6 +198,7 @@ export  const products = [
         scents: null,
         variants: [
             {
+              id: '583767f3-fe38-47f9-8ff0-1f6e3bc77fa4',
                 size: '2oz',
                 price: 37,
             },
@@ -236,6 +241,7 @@ export  const products = [
         scents: null,
         variants: [
             {
+              id: '150ca785-8095-4d1a-834e-2799d216de6f',
                 size: '2oz',
                 price: 37,
             },
@@ -268,6 +274,7 @@ export  const products = [
         scents: null,
         variants: [
             {
+              id: '150ca785-8095-4d1a-834e-2799d216de6f',
                 size: '30ml',
                 price: 25,
             },
