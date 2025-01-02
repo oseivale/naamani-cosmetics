@@ -1,0 +1,231 @@
+.container {
+  /* background-color: #ebedef; */
+  /* background-color: var(--naamani-purple); */
+  background-image: linear-gradient(to bottom, rgba(197, 180, 230, 0.8), rgba(197, 180, 230, 0.8)), url('../../../../public/naamani-floral-bg-purple.jpg');
+  background-size: cover;
+  /* height: 30vh; */
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  /* border-radius: 8px; */
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.right {
+    background-color: var(--naamani-caramel);
+}
+
+.left {
+    background-color: var(--naamani-coffee);
+}
+
+.textContent{
+  /* padding: 1rem; */
+}
+
+.contentWrapper div {
+  /* min-width: 40%; */
+  /* padding: 1rem; */
+  /* max-width: 40%; */
+}
+
+
+/* Section Wrapper */
+.sectionWrapper {
+  /* padding: 4rem 2rem; */
+  background-color: #fff;
+}
+
+/* Main Container */
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  /* gap: 2rem; */
+}
+
+/* Heading */
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--naamani-coffee); /* Similar to the color theme in the screenshots */
+  margin-bottom: .5rem;
+  line-height: 1.4;
+}
+
+/* Description */
+.description {
+  font-size: 1rem;
+  color: var(--naamani-coffee);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  margin-top: .5rem;
+}
+
+/* Features List */
+.features {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+}
+
+.featureList li {
+  font-size: 1rem;
+  color: var(--naamani-coffee);
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+/* Checkmark Icon for Features */
+.featureList li::before {
+  content: '✔';
+  color: var(--naamani-coffee);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.learnMore {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #b27952;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.learnMore:hover {
+  background-color: #a06848;
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+.image {
+  height: 450px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Section */
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left;
+  margin-top: -2rem; /* Slight overlap effect with image */
+  position: relative;
+  z-index: 1;
+  right: 80px;
+  width: 300px;
+}
+
+/* Statistics Section */
+.statistics {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+}
+
+.percent {
+  font-size: 1.5rem;
+  color: #b27952;
+  vertical-align: super;
+}
+
+.plus {
+  font-size: 1.5rem;
+  color: #b27952;
+  vertical-align: super;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #6c6c6c;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .statistics {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    text-align: center;
+    margin-top: 0;
+    top: -50px;
+    width: 250px;
+    left: 0;
+  }
+
+  /* .image {
+    height: 350px;
+    width: auto;
+  } */
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

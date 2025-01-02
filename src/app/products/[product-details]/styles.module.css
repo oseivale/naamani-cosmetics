@@ -1,0 +1,263 @@
+.container {
+    padding: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .quantityBtn {
+    background-color: var(--naamani-green);
+    padding: .6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .variant {
+    display: inline-block;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-nunito);
+    letter-spacing: 1px;
+    margin: 0rem .25rem;
+    transition: 450ms ease;
+  }
+
+  .variant:hover {
+    background-color: var(--naamani-green);
+    cursor: pointer;
+  }
+
+  .directions {
+    font-family: var(--font-nunito);
+  }
+
+  .quantityInput {
+    padding: 0.75rem 1.2rem;
+  }
+  
+  .breadcrumb {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    color: var(--naamani-purple);
+  }
+
+  .breadcrumb a:hover {
+    color: var(--naamani-coffee);
+  }
+  
+  .productSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .imageGallery {
+    flex: 1 1 40%;
+    max-width: 500px;
+  }
+  
+  .thumbnailList {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .thumbnail img {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .thumbnail img:hover {
+    transform: scale(1.1);
+  }
+  
+  .mainImage img {
+    height: 500px;
+    width: auto;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .productInfo {
+    flex: 1 1 50%;
+    max-width: 600px;
+    
+  }
+
+  .productInfo  p{
+    margin-top: 0;
+  }
+  
+  .productName {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--naamani-purple);
+  }
+  
+  .productPrice {
+    font-size: 1.95rem;
+    color: #2c7a2c;
+    margin-bottom: 0rem;
+  }
+
+  .productSingleSize {
+    font-size: .9rem;
+  }
+  
+  .productAvailability,
+  .productType {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .addToCart {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .quantity input {
+    width: 3rem;
+    text-align: center;
+    border: .5px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .addToCartButton {
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--naamani-purple);
+    gap: 1rem;
+    color: white;
+    padding: .75rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* text-transform: uppercase; */
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: var(--font-nunito);
+  }
+
+  .addToCartButtonContainer{
+    width: 100%;
+    font-family: var(--font-nunito);
+  }
+  
+  .addToCartButton:hover {
+    background-color: var(--naamani-green);
+    color: var(--naamani-purple);
+  }
+  
+  .askButton {
+    margin-bottom: 1rem;
+  }
+  
+  .askButton a {
+    color: #2c7a2c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .share {
+    margin-top: 1rem;
+  }
+  
+  .shareIcons a {
+    margin-right: 0.5rem;
+    color: #555;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .notFound {
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .sizeHeader {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-nunito);
+  }
+  
+  @media (max-width: 768px) {
+    .productSection {
+      flex-direction: column;
+    }
+  
+    .imageGallery {
+      margin-bottom: 2rem;
+    }
+
+    .mainImage img {
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+
+  .accordion {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-header {
+    background-color: #f7f7f7;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .accordion-content {
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .accordion-content.active {
+    max-height: 200px; /* Adjust as needed */
+    padding: 10px;
+  }
+  

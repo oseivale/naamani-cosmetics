@@ -1,0 +1,56 @@
+"use client";
+
+import { useState } from "react";
+import styles from "./styles.module.css";
+import { Minus } from "@/app/icons/minus";
+import { Add } from "@/app/icons/add";
+import { useCart } from "@/app/contexts/cart";
+
+type QuantitySelectorProps = {
+  onQuantityChange: (quantity: number) => void; // Callback for parent to get the quantity
+  initialQuantity?: number; // Optional initial quantity
+  quantityTest: number;
+};
+
+export default function QuantitySelector({
+  onQuantityChange,
+  initialQuantity = 1,
+  quantityTest
+  
+}: QuantitySelectorProps) {
+//   const [quantity, setQuantity] = useState(initialQuantity);
+
+  const { cart, handleIncrease, handleDecrease, quantity } =
+    useCart();
+
+//   const handleIncrease = () => {
+//     const newQuantity = quantity + 1;
+//     setQuantity(newQuantity);
+//     onQuantityChange(newQuantity);
+//   };
+
+//   const handleDecrease = () => {
+//     if (quantity > 1) {
+//       const newQuantity = quantity - 1;
+//       setQuantity(newQuantity);
+//       onQuantityChange(newQuantity);
+//     }
+//   };
+
+  return (
+    <div className={styles.quantity}>
+      <button className={styles.quantityBtn} onClick={handleDecrease}>
+        <Minus />
+      </button>
+      <input
+        className={styles.quantityInput}
+        type="text"
+        value={quantityTest}
+        readOnly
+      />
+      <button className={styles.quantityBtn} onClick={handleIncrease}>
+        <Add />
+      </button>
+    </div>
+  );
+}

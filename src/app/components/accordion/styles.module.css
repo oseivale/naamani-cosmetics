@@ -1,0 +1,81 @@
+/* Accordion Container */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    /* border: 1px solid #ddd; */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    background-color: #fff;
+    margin: 2rem 0;
+  }
+  
+  /* Accordion Item */
+  .item {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Accordion Title */
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    background-color: #f9f9f9;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: var(--font-nunito);
+  }
+  
+  .title:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Active State */
+  .active {
+    color: #b27952; /* Highlighted text color */
+  }
+  
+  /* Accordion Content */
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .expanded {
+    max-height: 500px; /* Large enough to accommodate content */
+    padding: 1rem;
+  }
+
+  .inactive svg {
+    transition: 450ms ease;
+
+  }
+
+  .active svg {
+    transition: 450ms ease;
+    transform: rotate(90deg);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+  
+    .content {
+      font-size: 0.9rem;
+    }
+  }

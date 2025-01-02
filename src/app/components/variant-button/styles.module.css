@@ -1,0 +1,23 @@
+.variant {
+    display: inline-block;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-nunito);
+    letter-spacing: 1px;
+    margin: 0rem .25rem;
+    transition: 450ms ease;
+  }
+
+  .variant:hover {
+    background-color: var(--naamani-green);
+    cursor: pointer;
+  }
+
+  .active {
+    border: 2px solid var(--naamani-purple);
+    background-color: var(--naamani-green);
+
+    /* border: 2px solid var(--naamani-green);
+    background-color: var(--naamani-purple); */
+  }

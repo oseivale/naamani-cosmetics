@@ -1,0 +1,60 @@
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mainImage {
+    overflow: hidden;
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+  }
+
+  .fading {
+    opacity: 0; /* Start fade-out */
+  }
+  
+  .mainImage img {
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    opacity: 1;
+    transition: opacity 450ms ease;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .thumbnailList {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .thumbnail {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    /* padding: 4px; */
+    transition: border-color 0.3s ease;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .thumbnail img {
+    height: 4rem;
+    width: 4rem;
+  }
+  
+  .thumbnail:hover {
+    border-color: #ddd;
+  }
+  
+  .activeThumbnail {
+    border-color: var(--naamani-purple); /* Highlight the active thumbnail */
+  }
+
+  @media (max-width: 768px) {
+
+    .mainImage img {
+      border-radius: 8px;
+      width: 100%;
+    }
+  }

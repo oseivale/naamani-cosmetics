@@ -1,0 +1,283 @@
+/* General Styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.banner {
+  background-color: var(--naamani-green);
+  margin: 0;
+}
+
+.banner h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.logo {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Mobile-Only and Desktop-Only Classes */
+.mobileOnly {
+  display: none;
+}
+
+.desktopOnly {
+  display: none;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--naamani-purple);
+  font-size: 1rem;
+  margin: 1.3rem;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+/* Cart Icon */
+.cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--naamani-purple);
+}
+
+/* Drawer Overlay */
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.drawerOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Navigation Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  width: 16rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawerLeft.active {
+  transform: translateX(0);
+}
+
+.drawerRight {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.drawerRight.active {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--naamani-purple);
+}
+
+.cartItemImage {
+  width: 50px;
+  margin: 0.25rem;
+}
+
+.cartItemsWrapper {
+  list-style-type: none;
+  padding: 0;
+}
+
+.itemName {
+  width: 70%;
+  margin: 0;
+}
+
+.cartItem div {
+  display: flex;
+  /* align-items: center; */
+  gap: 0.75rem;
+}
+
+.cartItem {
+  /* display: flex; */
+  width: 100%;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.variantWrapper p{
+  margin: 0;
+  font-size: .75rem;
+}
+
+.viewCartBtn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--naamani-purple);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--naamani-white);
+  padding: 0.5rem;
+}
+
+.totalItems {
+  display: flex;
+  top: -20px;
+  left: 15px;
+  font-family: var(--font-nunito);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 0.65rem;
+  width: 0.65rem;
+  border-radius: 100%;
+  padding: 0.25rem;
+  background: var(--naamani-green);
+  font-size: .75rem;
+}
+
+.removeBtnContainer{
+  display: flex;
+  align-items: center;
+}
+
+.removeBtn {
+  border: none;
+  background: transparent;
+}
+
+.removeBtn svg {
+  height: 20px;
+}
+
+.quantityInput{
+  width: 20%;
+  text-align: center;
+  padding: .25rem;
+}
+
+.quantityTotal {
+  width: 20%;
+}
+
+.itemWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.totalText{
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+
+.shippingText{
+  font-size: .75rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navLinks {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .navLink {
+    margin: 0.5rem;
+    font-size: 1.75rem;
+  }
+  .mobileOnly {
+    display: block;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .logo {
+    flex-grow: unset;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileOnly {
+    display: none;
+  }
+
+  .desktopOnly {
+    display: block;
+  }
+
+  .logo {
+    flex-grow: unset;
+    text-align: left;
+  }
+}
