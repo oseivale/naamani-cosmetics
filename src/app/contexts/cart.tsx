@@ -51,8 +51,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setSize(size);
   };
 
+  // const handleScentChange = (scent: string) => {
+  //   setScent(scent);
+  // };
+
   const handleScentChange = (scent: string) => {
-    setScent(scent);
+    setScent((currentScent) => (currentScent === scent ? "" : scent));
   };
 
   // Load cart from localStorage on mount

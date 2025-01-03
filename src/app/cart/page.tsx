@@ -38,7 +38,7 @@ export default function CartPage() {
             key={`${item.id}--${item.size}-${item.scent}`}
             style={{ marginBottom: "1rem" }}
           >
-            <Image src={item.image} alt={item.name} width={50} height={50} />
+            <Image src={item.image} alt={item.name} width={1000} height={1000} />
             <div className={styles.cartData}>
               <h2 className={styles.itemName}>{item.name}</h2>
               {item.scent || item.size ? (

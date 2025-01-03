@@ -139,7 +139,8 @@
 }
 
 .cartItemImage {
-  width: 50px;
+  width: 80px;
+  height: auto;
   margin: 0.25rem;
 }
 
@@ -185,6 +186,7 @@
 
 .totalItems {
   display: flex;
+  color: var(--naamani-purple);
   top: -20px;
   left: 15px;
   font-family: var(--font-nunito);
@@ -247,6 +249,12 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
+  }
+
+  .cartItemImage {
+    width: 80px;
+    height: auto;
+    margin: 0.25rem;
   }
 
   .navLink {

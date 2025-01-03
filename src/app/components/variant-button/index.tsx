@@ -3,6 +3,7 @@
 import { useCart } from "@/app/contexts/cart";
 // import { useVariant } from "../contexts/VariantContext";
 import styles from "./styles.module.css";
+import { useState } from "react";
 
 type VariantButtonProps = {
   variant: string;
@@ -10,6 +11,7 @@ type VariantButtonProps = {
 
 export default function VariantButton({ variant }: VariantButtonProps) {
     // const { selectedVariant, setSelectedVariant } = useVariant();
+    // const  [isActive, setIsActive] = useState(false)
 
     // const isActive = selectedVariant === variant;
   
@@ -21,6 +23,11 @@ export default function VariantButton({ variant }: VariantButtonProps) {
   useCart();
 
   const isActive = size === variant
+
+  // const test = () => {
+  //   handleSizeChange(variant)
+  //   setIsActive(!isActive)
+  // }
 
   return (
     <button

@@ -128,7 +128,7 @@ export default function Navigation() {
                 {cart.map((item) => {
                   return (
                     <li className={styles.cartItem} key={`${item.id}--${item.size}-${item.scent}`}>
-                      <Image className={styles.cartItemImage} src={item.image} height={100} width={100} alt={"#"}/>
+                      <Image className={styles.cartItemImage} src={item.image} height={1000} width={1000} alt={"#"}/>
                       {cart.length && (
                         <div className={styles.itemWrapper}>
                           <div>
