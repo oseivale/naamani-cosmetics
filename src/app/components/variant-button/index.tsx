@@ -3,7 +3,6 @@
 import { useCart } from "@/app/contexts/cart";
 // import { useVariant } from "../contexts/VariantContext";
 import styles from "./styles.module.css";
-import { useState } from "react";
 
 type VariantButtonProps = {
   variant: string;

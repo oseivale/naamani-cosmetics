@@ -117,7 +117,6 @@ export default async function ProductPage({
               name={product.name}
               price={product.price}
               image={product.images[0]}
-              defaultSize={product.variants.length === 1 ? product.variants[0] : null}
             />
             {/* <div className={styles.addToCartButtonContainer}>
               <button className={styles.addToCartButton}><CartAdd />Add to Cart</button>

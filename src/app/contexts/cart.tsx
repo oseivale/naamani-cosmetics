@@ -32,8 +32,8 @@ type CartContextType = {
   totalAmount: number;
   totalItems: number;
   quantity: number;
-  isDisabled: boolean; 
-  handleButtonClick: () => void;
+  // isDisabled: boolean; 
+  // handleButtonClick: () => void;
   handleIncrease: () => void;
   handleDecrease: () => void;
   handleQuantityChange: (quantity: number) => void;
@@ -55,7 +55,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
   const [scent, setScent] = useState("");
-  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleQuantityChange = (quantity: number) => {
     setQuantity(quantity);
@@ -102,15 +101,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
 
 
-  const handleButtonClick = () => {
+  // const handleButtonClick = () => {
   
-    if (isDisabled) {
-      console.log('isDisabled', isDisabled)
-      alert("Button is disabled. You cannot perform this action!");
-    } else {
-      console.log("Button clicked!");
-    }
-  };
+  //   if (isDisabled) {
+  //     console.log('isDisabled', isDisabled)
+  //     alert("Button is disabled. You cannot perform this action!");
+  //   } else {
+  //     console.log("Button clicked!");
+  //   }
+  // };
 
   const addToCart = (item: CartItem) => {
  
@@ -218,8 +217,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         isCartDrawerOpen,
         totalAmount,
         totalItems,
-        isDisabled,
-        handleButtonClick,
+        // isDisabled,
+        // handleButtonClick,
         handleDecrease,
         handleIncrease,
         quantity,

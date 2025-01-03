@@ -4,14 +4,12 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
-import { useState } from "react";
 
 type AddToCartButtonProps = {
   id: string;
   name: string;
   price: number;
   image: string;
-  defaultSize: string;
 };
 
 export default function AddToCartButton({
@@ -19,7 +17,7 @@ export default function AddToCartButton({
   name,
   price,
   image,
-  defaultSize
+  
 }: AddToCartButtonProps) {
   const {
     addToCart,
@@ -28,11 +26,8 @@ export default function AddToCartButton({
     size,
     scent,
     handleQuantityChange,
-    isDisabled,
-    handleButtonClick,
   } = useCart();
   //   const [quantity, setQuantity] = useState(1);
-  const [disableButton, setDisableButton] = useState(false);
 
   //   const handleQuantityChange = (quantity: number) => {
   //     setQuantity(quantity);
