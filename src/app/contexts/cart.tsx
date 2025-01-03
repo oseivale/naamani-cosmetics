@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 export type CartItem = {
   id: string;
@@ -8,7 +14,7 @@ export type CartItem = {
   price: number;
   quantity: number;
   image: string;
-  size?: string
+  size?: string;
   scent?: string;
 };
 
@@ -26,12 +32,19 @@ type CartContextType = {
   totalAmount: number;
   totalItems: number;
   quantity: number;
+  isDisabled: boolean; 
+  handleButtonClick: () => void;
   handleIncrease: () => void;
   handleDecrease: () => void;
   handleQuantityChange: (quantity: number) => void;
   handleSizeChange: (size: string) => void;
   handleScentChange: (scent: string) => void;
-  updateLineItemQuantity: (id: string, quantity: number, size?: string, scent?: string) => void;
+  updateLineItemQuantity: (
+    id: string,
+    quantity: number,
+    size?: string,
+    scent?: string
+  ) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -40,8 +53,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState('');
-  const [scent, setScent] = useState('');
+  const [size, setSize] = useState("");
+  const [scent, setScent] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleQuantityChange = (quantity: number) => {
     setQuantity(quantity);
@@ -86,8 +100,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
   //   // setIsCartDrawerOpen(true)
   // };
 
+
+
+  const handleButtonClick = () => {
+  
+    if (isDisabled) {
+      console.log('isDisabled', isDisabled)
+      alert("Button is disabled. You cannot perform this action!");
+    } else {
+      console.log("Button clicked!");
+    }
+  };
+
   const addToCart = (item: CartItem) => {
+ 
+
     setCart((prevCart) => {
+
       // Check for an existing item with the same size and scent
       const existingItem = prevCart.find(
         (i) =>
@@ -95,7 +124,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           i.size === item.size &&
           (i.scent === item.scent || i.scent === undefined)
       );
-  
+
       if (existingItem) {
         // If item already exists in the cart, update its quantity
         return prevCart.map((i) =>
@@ -110,7 +139,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       // Otherwise, add a new line item to the cart
       return [...prevCart, item];
     });
-  
+
     // Optionally open the cart drawer (uncomment if needed)
     // setIsCartDrawerOpen(true);
   };
@@ -121,26 +150,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const updateQuantity = (id: string, quantity: number) => {
     setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      )
+      prevCart.map((item) => (item.id === id ? { ...item, quantity } : item))
     );
   };
 
   const clearCart = () => setCart([]);
 
-  const totalAmount = cart.reduce(
+  const totalAmount = cart && cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
   const triggerCartDrawerClose = () => {
-    setIsCartDrawerOpen(false)
-  }
+    setIsCartDrawerOpen(false);
+  };
 
   const triggerCartDrawerOpen = () => {
-    setIsCartDrawerOpen(true)
-  }
+    setIsCartDrawerOpen(true);
+  };
 
   const handleIncrease = () => {
     const newQuantity = quantity + 1;
@@ -156,25 +183,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
-    // Update the quantity of a specific line item
-    const updateLineItemQuantity = (
-      id: string,
-      
-      quantity: number,
-      size?: string,
-      scent?: string
-    ) => {
-      setCart((prevCart) =>
-        prevCart.map((item) =>
-          item.id === id && item.size === size && item.scent === scent
-            ? { ...item, quantity }
-            : item
-        )
-      );
-    };
+  // Update the quantity of a specific line item
+  const updateLineItemQuantity = (
+    id: string,
 
-   // Total number of items in the cart
-   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    quantity: number,
+    size?: string,
+    scent?: string
+  ) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id && item.size === size && item.scent === scent
+          ? { ...item, quantity }
+          : item
+      )
+    );
+  };
+
+  // Total number of items in the cart
+  const totalItems = cart && cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <CartContext.Provider
@@ -191,13 +218,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
         isCartDrawerOpen,
         totalAmount,
         totalItems,
+        isDisabled,
+        handleButtonClick,
         handleDecrease,
         handleIncrease,
         quantity,
         handleQuantityChange,
         handleSizeChange,
         handleScentChange,
-        updateLineItemQuantity
+        updateLineItemQuantity,
       }}
     >
       {children}

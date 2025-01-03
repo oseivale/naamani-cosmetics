@@ -21,12 +21,24 @@
     width: 100%;
     font-family: var(--font-nunito);
   }
+
+
   
   .addToCartButton:hover {
     background-color: var(--naamani-green);
     color: var(--naamani-purple);
   }
 
+  .addToCartButton:active, .addToCartButton:focus {
+    background-color: var(--naamani-purple);
+    color: var(--naamani-white);
+  }
+
+  .addToCartButton:disabled {
+    background-color: #ccc;
+    color: grey;
+  }
+  
   .quantityLabel {
     margin-bottom: 0;
   }

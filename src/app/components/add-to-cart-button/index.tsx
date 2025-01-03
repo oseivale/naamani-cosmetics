@@ -4,12 +4,14 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
+import { useState } from "react";
 
 type AddToCartButtonProps = {
   id: string;
   name: string;
   price: number;
   image: string;
+  defaultSize: string;
 };
 
 export default function AddToCartButton({
@@ -17,6 +19,7 @@ export default function AddToCartButton({
   name,
   price,
   image,
+  defaultSize
 }: AddToCartButtonProps) {
   const {
     addToCart,
@@ -24,28 +27,53 @@ export default function AddToCartButton({
     quantity,
     size,
     scent,
-    handleQuantityChange
-
+    handleQuantityChange,
+    isDisabled,
+    handleButtonClick,
   } = useCart();
-//   const [quantity, setQuantity] = useState(1);
+  //   const [quantity, setQuantity] = useState(1);
+  const [disableButton, setDisableButton] = useState(false);
 
-//   const handleQuantityChange = (quantity: number) => {
-//     setQuantity(quantity);
-//   };
+  //   const handleQuantityChange = (quantity: number) => {
+  //     setQuantity(quantity);
+  //   };
 
   console.log("cart!!", cart);
+  console.log("size!!", size);
+  console.log("scent!!", scent);
+
+  // const processVariants = () => {
+  //   if(size === ""){
+  //     return defaultSize
+  //   } else if (scent === "") {
+  //     return true
+  //   }
+  // }
 
   return (
     <>
+      {/* <div onClick={handleButtonClick} style={{ display: "inline-block" }}>
+        <button disabled={isDisabled}>Click Me</button>
+      </div>
+      <button onClick={() => setIsDisabled(!isDisabled)}>
+        Toggle Button Disabled State
+      </button> */}
       <p className={styles.quantityLabel}>Select quantity</p>
-      <QuantitySelector onQuantityChange={handleQuantityChange} quantityTest={quantity} />
-      <button
-        className={styles.addToCartButton}
-        onClick={() => addToCart({ id, name, price, image, quantity, size, scent })}
-      >
-        <CartAdd />
-        Add to Cart
-      </button>
+      <QuantitySelector
+        onQuantityChange={handleQuantityChange}
+        quantityTest={quantity}
+      />
+    
+        <button
+        // disabled={size === "" || scent === "" ? true : false}
+          className={styles.addToCartButton}
+          onClick={() =>
+            addToCart({ id, name, price, image, quantity, size, scent })
+          }
+        >
+          <CartAdd />
+          Add to Cart
+        </button>
     </>
   );
 }
