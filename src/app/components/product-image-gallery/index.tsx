@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./styles.module.css";
+import Image from "next/image";
 
 type ProductImageGalleryProps = {
   images: string[]; // Array of product images
@@ -29,7 +30,7 @@ export default function ProductImageGallery({
     <div className={styles.imageGallery}>
       {/* Main Image */}
       <div className={`${styles.mainImage} ${isFading ? styles.fading : ""}`}>
-        <img src={mainImage} alt={productName} />
+        <Image src={mainImage} alt={productName} height={1000} width={1000} />
       </div>
 
       {/* Thumbnails */}
@@ -43,11 +44,11 @@ export default function ProductImageGallery({
             //={() => setMainImage(image)} // Update main image on click
             onClick={() => handleThumbnailClick(image)}
           >
-            <img
+            <Image
               src={image}
               alt={`Thumbnail ${index + 1}`}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
             />
           </div>
         ))}

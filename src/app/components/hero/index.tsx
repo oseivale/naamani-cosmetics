@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import { Arrow } from "@/app/icons/arrow";
+import Image from "next/image";
 
 export default function HeroBanner() {
   const [animateTextSection, setAnimateTextSection] = useState(false);
@@ -63,10 +64,12 @@ export default function HeroBanner() {
             animateImages ? styles.animateSlideUp : ""
           }`}
         >
-          <img
+          <Image
             className={styles.img}
             src="http://archivo.halodemo.com/wp-content/uploads/2022/06/eco-friendly-zero-waste-face-care-accessories-in-a-linen-reusable-bag-top-view.jpg"
             alt="Left Skincare Items"
+            height={1000}
+            width={1000}
           />
           
         {/* <img className={styles.img} alt={'#'} src={'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} width={200} /> */}
@@ -82,10 +85,13 @@ export default function HeroBanner() {
             src="http://archivo.halodemo.com/wp-content/uploads/2022/06/serum-with-herbal-extracts-for-skincare-flat-lay-minimalism.jpg"
             alt="Right Skincare Items"
           /> */}
-          <img
+          <Image
             className={styles.img}
-            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={'https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220'}
+            // src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Left Skincare Items"
+            height={1000}
+            width={1000}
           />
 
         </div>

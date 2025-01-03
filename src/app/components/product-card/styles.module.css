@@ -25,11 +25,13 @@
 .productImg {
   display: flex;
   justify-content: center;
-  margin-bottom: .5rem;
+  margin: .5rem auto;
+  width: 60%;
 }
 
 .productCard img {
-  width: 70%;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 

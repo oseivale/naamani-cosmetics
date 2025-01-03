@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { Minus } from "../icons/minus";
 import { Add } from "../icons/add";
+import Image from "next/image";
 
 export default function CartPage() {
   const {
@@ -37,7 +38,7 @@ export default function CartPage() {
             key={`${item.id}--${item.size}-${item.scent}`}
             style={{ marginBottom: "1rem" }}
           >
-            <img src={item.image} alt={item.name} width={50} height={50} />
+            <Image src={item.image} alt={item.name} width={50} height={50} />
             <div className={styles.cartData}>
               <h2 className={styles.itemName}>{item.name}</h2>
               {item.scent || item.size ? (

@@ -13,8 +13,17 @@ const nextConfig = {
         hostname: 'venedorcitrus.myshopify.com',
         pathname: '/cdn/shop/products/**', // Matches your product images
       },
+      {
+        protocol: 'http',
+        hostname: 'archivo.halodemo.com',
+        pathname: '/**', // Matches your product images
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**', // Matches your product images
+      },
     ],
-    domains: ['venedorcitrus.myshopify.com'], // Alternative configuration for simpler setups
   },
 };
 

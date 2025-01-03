@@ -8,6 +8,7 @@ import { NaamaniMain } from "@/app/logos/naamani-main";
 import { Hamburger } from "@/app/icons/hamburger";
 import { useCart } from "@/app/contexts/cart";
 import { Trash } from "@/app/icons/trash";
+import Image from "next/image";
 
 
 export default function Navigation() {
@@ -127,7 +128,7 @@ export default function Navigation() {
                 {cart.map((item) => {
                   return (
                     <li className={styles.cartItem} key={`${item.id}--${item.size}-${item.scent}`}>
-                      <img className={styles.cartItemImage} src={item.image} />
+                      <Image className={styles.cartItemImage} src={item.image} height={100} width={100} alt={"#"}/>
                       {cart.length && (
                         <div className={styles.itemWrapper}>
                           <div>
