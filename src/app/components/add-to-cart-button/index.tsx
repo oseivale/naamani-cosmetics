@@ -5,24 +5,8 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
+import { AddToCartButtonProps, Variant } from "@/app/types/add-to-cart-button";
 
-type Variant = {
-  id: string;
-  size: string;
-  price: number;
-};
-
-type Product = {
-  id: string;
-  name: string;
-  price: number | string;
-  variants?: Variant[]; // Optional, to handle products without variants
-  scents?: string[]; // Optional, to handle products without scents
-};
-
-type AddToCartButtonProps = {
-  product: Product;
-};
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart, quantity, handleQuantityChange } = useCart();
@@ -69,7 +53,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
 
     addToCart(
       product,
-      variant?.id || null, // Pass variant ID if available, or null if no variants
+      variant ? variant.id : null, // Pass variant ID if available, or null if no variants
       quantity,
       selectedScent
     );

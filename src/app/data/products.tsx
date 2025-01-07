@@ -2,7 +2,7 @@ export const products = [
   {
     id: "1",
     name: "Cleansing Oil for Face",
-    price: '15',
+    price: 15,
     availability: 80,
     category: "face",
     description: `We have made this cleansing oil with organic carrier oils high in essential fatty acids, oleic acids, and
@@ -42,8 +42,8 @@ export const products = [
   {
     id: "2",
     name: "Body Butter",
-    // price: 25.0,
-    price: '8-25',
+    price: 25.0,
+    // price: '8-25',
     availability: 80,
     featured: true,
     category: "body",
@@ -90,7 +90,7 @@ export const products = [
   {
     id: "3",
     name: "Face Oil",
-    price: '25',
+    price: 25,
     availability: 80,
     category: "face",
     featured: true,
@@ -135,7 +135,7 @@ export const products = [
   {
     id: "4",
     name: "Face Cream for Dry Skin",
-    price: '37',
+    price: 37,
     availability: 80,
     category: "face",
     description: `This formulation is a rich cream, perfect for dry skin to provide
@@ -176,7 +176,7 @@ export const products = [
   {
     id: "5",
     name: "Face Cream for Combination Skin",
-    price: '37',
+    price: 37,
     availability: 80,
     category: "face",
     featured: true,
@@ -218,7 +218,7 @@ export const products = [
   {
     id: "6",
     name: "Face Cream for Oily Skin",
-    price: '37',
+    price: 37,
     availability: 80,
     category: "face",
     description: `This face cream is a blend of Shea butter with oils that are easily
@@ -261,7 +261,7 @@ export const products = [
   {
     id: "7",
     name: "Face Serum",
-    price: '25',
+    price: 25,
     availability: 80,
     category: "face",
     description: `We formulate our Face Oils to provide valuable nutrients and moisture to the skin.

@@ -7,6 +7,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
+import { ProductItem } from "../types/add-to-cart-button";
 
 // export type CartItem = {
 //   id: string;
@@ -37,43 +38,43 @@ import {
 //   price: number;
 // }
 
-interface Product {
-  id: string; // Unique identifier for the product
-  name: string; // Name of the product
-  basePrice?: number; // Optional base price for products without variants
-  price?: number; // General price for products without variants
-  availability?: number; // Number of items available in stock
-  featured?: boolean; // Indicates if the product is featured
-  category?: string; // Category of the product (e.g., 'body', 'face')
-  description?: string; // Product description
-  ingredients?: string; // List of ingredients as a string
-  directions?: string; // Directions for use
-  caution?: string; // Cautionary details
-  scents?: string[]; // Optional array of scents
-  variants?: Variant[]; // Array of variants (size, price, etc.)
-  variantHeading?: string; // Optional heading for variant selection
-  images?: string[]; // Array of image URLs
-}
+// interface Product {
+//   id: string;
+//   name: string;
+//   basePrice?: number;
+//   price?: number;
+//   availability?: number;
+//   featured?: boolean;
+//   category?: string;
+//   description?: string;
+//   ingredients?: string;
+//   directions?: string;
+//   caution?: string;
+//   scents?: string[];
+//   variants?: Variant[];
+//   variantHeading?: string; 
+//   images?: string[];
+// }
 
-interface Variant {
-  id: string; // Unique identifier for the variant
-  size: string; // Size of the variant (e.g., '2oz', '8oz')
-  price: number; // Price of the specific variant
-}
+// interface Variant {
+//   id: string;
+//   size: string;
+//   price: number;
+// }
 
 interface CartItem {
   id: string;
   name: string;
   size: string;
   scent: string | null;
-  price: number;
+  price: number | string;
   quantity: number;
   image: string;
 }
 
 type AddToCart = (
-  product: Product,
-  selectedVariantId: string,
+  product: ProductItem,
+  selectedVariantId: string| null,
   quantity?: number,
   selectedScent?: string | null
 ) => void;
@@ -204,7 +205,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   //   // setIsCartDrawerOpen(true);
   // };
 
-  const addToCart: AddToCart = (product, selectedVariantId: string, quantity: number = 1, selectedScent: string | null = null) => {
+  const addToCart: AddToCart = (product, selectedVariantId: string | null, quantity: number = 1, selectedScent: string | null = null) => {
     const selectedVariant = product?.variants?.find(
       (variant) => variant.id === selectedVariantId
     );
@@ -242,7 +243,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         scent: selectedScent,
         price: selectedVariant.price,
         quantity: quantity,
-        image: product.images[0]
+        image: product.images ? product.images[0]: ''
       };
   
       return [...prevCart, newItem];
@@ -264,7 +265,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const clearCart = () => setCart([]);
 
   const totalAmount = cart && cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (sum, item: any) => sum + item.price * item.quantity,
     0
   );
 

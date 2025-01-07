@@ -48,7 +48,7 @@ export default function CartPage() {
                 </div>
               ) : null}
 
-              <p>${item.price.toFixed(2)}</p>
+              <p>${item.price}</p>
 
               <div className={styles.removeBtnContainer}>
                 {/* <input
