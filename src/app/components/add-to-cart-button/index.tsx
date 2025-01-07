@@ -5,7 +5,6 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
-import Dropdown from "../dropdown";
 
 type Variant = {
   id: string;

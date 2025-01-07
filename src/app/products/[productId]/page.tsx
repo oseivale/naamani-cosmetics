@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import styles from "./styles.module.css";
 import { products } from "@/app/data/products";
 import Accordion from "@/app/components/accordion";
-import Dropdown from "@/app/components/dropdown";
-import VariantButton from "@/app/components/variant-button";
 import ProductImageGallery from "@/app/components/product-image-gallery";
 import AddToCartButton from "@/app/components/add-to-cart-button";
 import Link from "next/link";

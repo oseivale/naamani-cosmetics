@@ -1,77 +1,72 @@
-// import Image from "next/image";
 import styles from "./styles.module.css";
 import PageBanner from "../components/page-wrapper";
-import AlternatingRow from "../components/page-row";
 import { CrueltyFree } from "../icons/naamani-cruelty-free";
 import { GlutenFree } from "../icons/naamani-gluten-free";
 import { ParabenFree } from "../icons/naamai--paraben-free";
 import { NaturalResources } from "../icons/natural-resources";
 import { NaamaniCanada } from "../icons/naamani-canada";
 import { NaamaniEarth } from "../icons/naamani-earth";
-import FAQ from "../components/faqs";
-import { NaamaniSafety } from "../icons/naamani-safety";
-import Link from "next/link";
 
 export default function About() {
-  const rows = [
-    {
-      image: "/images/row1.jpg",
-      content: (
-        <p>
-          I believe that our body is a sacred gift from nature. The human skin
-          is the largest organ of our body and I think that if we nourish our
-          skin with the powerful ingredients from plant sources, not only do we
-          maintain our natural beauty; we in turn preserve the earth for our
-          future generations.
-        </p>
-      ),
-      cta: "Learn More",
-    },
-    {
-      image: "/images/row2.jpg",
-      content: (
-        <p>
-          With this vision, comes the creation of Naamani Artisan Cosmetics,
-          focusing on the use of raw materials and ethically sourced essential
-          oils derived from organic sources.
-        </p>
-      ),
-      cta: "Explore Now",
-      reverse: true,
-    },
-    {
-      image: "/images/row3.jpg",
-      content: (
-        <p>
-          We strive to purchase all our raw materials from reputable Canadian
-          Companies who also believe in sourcing their products directly from
-          the local communities that produce these raw materials. Doing so
-          ensures a strong and healthy Canadian economy for small businesses;
-          supports the local communities from which we receive these raw and
-          organic materials while enabling us to use natural resources in a
-          responsible manner.
-        </p>
-      ),
-      cta: "Shop Now",
-    },
-    // {
-    //   image: "/images/row3.jpg",
-    //   content: (
-    //     <p>
-    //       Our goal is to create natural products for skin care with love and
-    //       passion, focusing on making small batches at a time to ensure your
-    //       full satisfaction with every product you receive. Our product line
-    //       includes:  Revitalizing Foaming Cleansers  Rejuvenating Face Oil 
-    //       Nourishing Face Cream for dry, combination and oily skin types 
-    //       Calming Eye Cream  Moisturizing Body Butters with a variety of
-    //       natural fragrance oils and essential oils to appeal to your senses 
-    //       Refreshing Lip Balms
-    //     </p>
-    //   ),
-    //   cta: "Shop Now",
-    //   reverse: true,
-    // },
-  ];
+  // const rows = [
+  //   {
+  //     image: "/images/row1.jpg",
+  //     content: (
+  //       <p>
+  //         I believe that our body is a sacred gift from nature. The human skin
+  //         is the largest organ of our body and I think that if we nourish our
+  //         skin with the powerful ingredients from plant sources, not only do we
+  //         maintain our natural beauty; we in turn preserve the earth for our
+  //         future generations.
+  //       </p>
+  //     ),
+  //     cta: "Learn More",
+  //   },
+  //   {
+  //     image: "/images/row2.jpg",
+  //     content: (
+  //       <p>
+  //         With this vision, comes the creation of Naamani Artisan Cosmetics,
+  //         focusing on the use of raw materials and ethically sourced essential
+  //         oils derived from organic sources.
+  //       </p>
+  //     ),
+  //     cta: "Explore Now",
+  //     reverse: true,
+  //   },
+  //   {
+  //     image: "/images/row3.jpg",
+  //     content: (
+  //       <p>
+  //         We strive to purchase all our raw materials from reputable Canadian
+  //         Companies who also believe in sourcing their products directly from
+  //         the local communities that produce these raw materials. Doing so
+  //         ensures a strong and healthy Canadian economy for small businesses;
+  //         supports the local communities from which we receive these raw and
+  //         organic materials while enabling us to use natural resources in a
+  //         responsible manner.
+  //       </p>
+  //     ),
+  //     cta: "Shop Now",
+  //   },
+  //   // {
+  //   //   image: "/images/row3.jpg",
+  //   //   content: (
+  //   //     <p>
+  //   //       Our goal is to create natural products for skin care with love and
+  //   //       passion, focusing on making small batches at a time to ensure your
+  //   //       full satisfaction with every product you receive. Our product line
+  //   //       includes:  Revitalizing Foaming Cleansers  Rejuvenating Face Oil 
+  //   //       Nourishing Face Cream for dry, combination and oily skin types 
+  //   //       Calming Eye Cream  Moisturizing Body Butters with a variety of
+  //   //       natural fragrance oils and essential oils to appeal to your senses 
+  //   //       Refreshing Lip Balms
+  //   //     </p>
+  //   //   ),
+  //   //   cta: "Shop Now",
+  //   //   reverse: true,
+  //   // },
+  // ];
 
   return (
     <div>

@@ -15,7 +15,7 @@ export default function Contact() {
       >
         <div className={styles.contactHeader}>
           <h1>Curious about Naamani Cosmetics?</h1>
-          <p>We'd love to hear from you!</p>
+          <p>{`We'd love to hear from you!`}</p>
         </div>
         <div className={styles.contact}>
           <div>

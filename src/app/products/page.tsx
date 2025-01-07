@@ -6,7 +6,6 @@ import ProductGrid from "../components/product-grid";
 import { products as initialProducts } from "../data/products";
 import PageBanner from "../components/page-wrapper";
 import styles from "./styles.module.css";
-import CategoryFilter from "../components/product-filter";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState(initialProducts);

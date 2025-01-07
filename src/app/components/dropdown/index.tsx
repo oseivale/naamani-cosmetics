@@ -17,12 +17,12 @@ export default function Dropdown({ options, label, handleScent }: DropdownProps)
   const { handleScentChange } =
     useCart();
 
-  const handleSelect = (value: string) => {
-    setSelected(value);
-    // handleVariantSelect(value);
-    handleScentChange(value)
-    setIsOpen(false); // Close the dropdown after selection
-  };
+  // const handleSelect = (value: string) => {
+  //   setSelected(value);
+  //   // handleVariantSelect(value);
+  //   handleScentChange(value)
+  //   setIsOpen(false); // Close the dropdown after selection
+  // };
 
  
   return (
