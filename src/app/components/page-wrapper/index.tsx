@@ -4,15 +4,15 @@ import { ReactNode } from "react";
 type PageBannerProps = {
   title: string; // Banner title (e.g., "About Us")
   backgroundImage: string;
-  children: ReactNode // Path to the background image
-  customBGStyles?: any;
+  children: ReactNode; // Path to the background image
+  customBGStyles?: { bgPosition?: "string" };
 };
 
 export default function PageBanner({
   title,
   backgroundImage,
   customBGStyles,
-  children
+  children,
 }: PageBannerProps) {
   return (
     <>
@@ -20,7 +20,7 @@ export default function PageBanner({
         className={styles.banner}
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundPosition: customBGStyles?.bgPosition
+          backgroundPosition: customBGStyles?.bgPosition,
         }}
       >
         <div className={styles.overlay}></div>
@@ -29,7 +29,6 @@ export default function PageBanner({
       <div className={styles.test}>
         <section className={styles.sectionContainer}>{children}</section>
       </div>
-      
     </>
   );
 }

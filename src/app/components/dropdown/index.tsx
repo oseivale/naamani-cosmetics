@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./styles.module.css";
-import { useCart } from "@/app/contexts/cart";
 
 type DropdownProps = {
   options: string[] | undefined; // Array of dropdown options
