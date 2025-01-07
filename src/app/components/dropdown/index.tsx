@@ -11,11 +11,8 @@ type DropdownProps = {
 };
 
 export default function Dropdown({ options, label, handleScent }: DropdownProps) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-
-  const { handleScentChange } =
-    useCart();
 
   // const handleSelect = (value: string) => {
   //   setSelected(value);
