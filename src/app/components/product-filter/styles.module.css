@@ -16,4 +16,59 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
+    text-transform: capitalize;
+  }
+
+  .filter {
+    margin: 1rem 0;
+  }
+  
+  .dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 12rem;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+  
+  .checkbox {
+    margin-right: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  .glossaryWrapper {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+  }
+
+  .glossary {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--naamani-purple);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  
+  @media (max-width: 768px) {
+    .filter {
+      width: 100%;
+    }
   }

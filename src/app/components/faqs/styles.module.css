@@ -1,0 +1,79 @@
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    width: 100%;
+  }
+  
+  .accordionItem {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .accordionItem:last-child {
+    border-bottom: none;
+  }
+  
+  .accordionTitle {
+    background: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    padding: 16px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+  }
+  
+  .accordionTitle:hover {
+    background: #f1f1f1;
+  }
+  
+  .accordionSymbol {
+    font-size: 20px;
+    margin-left: 8px;
+  }
+  
+  .accordionContent {
+    /* max-height: 0; */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff;
+    min-width: 600px;
+  }
+  
+  .accordionContent.expanded {
+    /* max-height: 200px; Adjust as needed or use auto for dynamic content */
+    /* padding: 16px; */
+    border-top: 1px solid #ddd;
+    min-width: 600px;
+  }
+
+  .accordionContent.expanded p {
+    padding: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .accordionTitle {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    .accordionContent {
+      font-size: 14px;
+      max-width: 500px;
+   
+    }
+
+    .accordionContent.expanded {
+        /* max-height: 200px; Adjust as needed or use auto for dynamic content */
+        /* padding: 16px; */
+        border-top: 1px solid #ddd;
+        min-width: 300px;
+      }
+  }

@@ -8,21 +8,82 @@ import {
   ReactNode,
 } from "react";
 
-export type CartItem = {
+// export type CartItem = {
+//   id: string;
+//   name: string;
+//   price: number;
+//   quantity: number;
+//   image: string;
+//   size?: string;
+//   scent?: string;
+// };
+
+// interface Product {
+//   id: string;
+//   name: string;
+//   basePrice: number; // Base price for the product
+//   availability: number;
+//   featured: boolean;
+//   category: string;
+//   description: string;
+//   scents?: string[]; // Optional array of scents
+//   variants: Variant[]; // Array of variants
+//   images: string[];
+// }
+
+// interface Variant {
+//   id: string;
+//   size: string;
+//   price: number;
+// }
+
+interface Product {
+  id: string; // Unique identifier for the product
+  name: string; // Name of the product
+  basePrice?: number; // Optional base price for products without variants
+  price?: number; // General price for products without variants
+  availability?: number; // Number of items available in stock
+  featured?: boolean; // Indicates if the product is featured
+  category?: string; // Category of the product (e.g., 'body', 'face')
+  description?: string; // Product description
+  ingredients?: string; // List of ingredients as a string
+  directions?: string; // Directions for use
+  caution?: string; // Cautionary details
+  scents?: string[]; // Optional array of scents
+  variants?: Variant[]; // Array of variants (size, price, etc.)
+  variantHeading?: string; // Optional heading for variant selection
+  images?: string[]; // Array of image URLs
+}
+
+interface Variant {
+  id: string; // Unique identifier for the variant
+  size: string; // Size of the variant (e.g., '2oz', '8oz')
+  price: number; // Price of the specific variant
+}
+
+interface CartItem {
   id: string;
   name: string;
+  size: string;
+  scent: string | null;
   price: number;
   quantity: number;
   image: string;
-  size?: string;
-  scent?: string;
-};
+}
+
+type AddToCart = (
+  product: Product,
+  selectedVariantId: string,
+  quantity?: number,
+  selectedScent?: string | null
+) => void;
 
 type CartContextType = {
   cart: CartItem[];
   size: string;
   scent: string;
-  addToCart: (item: CartItem) => void;
+  // addToCart: (item: CartItem) => void;
+  addToCart: AddToCart;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -43,7 +104,7 @@ type CartContextType = {
     id: string,
     quantity: number,
     size?: string,
-    scent?: string
+    scent?: string | null
   ) => void;
 };
 
@@ -111,38 +172,85 @@ export function CartProvider({ children }: { children: ReactNode }) {
   //   }
   // };
 
-  const addToCart = (item: CartItem) => {
+  // const addToCart = (item: CartItem) => {
  
 
+  //   setCart((prevCart) => {
+
+  //     // Check for an existing item with the same size and scent
+  //     const existingItem = prevCart.find(
+  //       (i) =>
+  //         i.id === item.id &&
+  //         i.size === item.size &&
+  //         (i.scent === item.scent || i.scent === undefined)
+  //     );
+
+  //     if (existingItem) {
+  //       // If item already exists in the cart, update its quantity
+  //       return prevCart.map((i) =>
+  //         i.id === existingItem.id &&
+  //         i.size === existingItem.size &&
+  //         (i.scent === existingItem.scent || i.scent === undefined)
+  //           ? { ...i, quantity: i.quantity + item.quantity }
+  //           : i
+  //       );
+  //     }
+  
+  //     // Otherwise, add a new line item to the cart
+  //     return [...prevCart, item];
+  //   });
+
+  //   // Optionally open the cart drawer (uncomment if needed)
+  //   // setIsCartDrawerOpen(true);
+  // };
+
+  const addToCart: AddToCart = (product, selectedVariantId: string, quantity: number = 1, selectedScent: string | null = null) => {
+    const selectedVariant = product?.variants?.find(
+      (variant) => variant.id === selectedVariantId
+    );
+  
+    if (!selectedVariant) {
+      console.error("Selected variant not found!");
+      return;
+    }
+  
     setCart((prevCart) => {
-
-      // Check for an existing item with the same size and scent
+      // Check if the same variant and scent already exist in the cart
       const existingItem = prevCart.find(
-        (i) =>
-          i.id === item.id &&
-          i.size === item.size &&
-          (i.scent === item.scent || i.scent === undefined)
+        (item) =>
+          item.id === product.id &&
+          item.size === selectedVariant.size &&
+          item.scent === selectedScent
       );
-
+  
       if (existingItem) {
-        // If item already exists in the cart, update its quantity
-        return prevCart.map((i) =>
-          i.id === existingItem.id &&
-          i.size === existingItem.size &&
-          (i.scent === existingItem.scent || i.scent === undefined)
-            ? { ...i, quantity: i.quantity + item.quantity }
-            : i
+        // Update the quantity if the item already exists
+        return prevCart.map((item) =>
+          item.id === product.id &&
+          item.size === selectedVariant.size &&
+          item.scent === selectedScent
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
         );
       }
   
-      // Otherwise, add a new line item to the cart
-      return [...prevCart, item];
+      // Add a new item if it doesn't exist
+      const newItem: CartItem = {
+        id: product.id,
+        name: product.name,
+        size: selectedVariant.size,
+        scent: selectedScent,
+        price: selectedVariant.price,
+        quantity: quantity,
+        image: product.images[0]
+      };
+  
+      return [...prevCart, newItem];
     });
-
+  
     // Optionally open the cart drawer (uncomment if needed)
     // setIsCartDrawerOpen(true);
   };
-
   const removeFromCart = (id: string) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
@@ -188,7 +296,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     quantity: number,
     size?: string,
-    scent?: string
+    scent?: string | null
   ) => {
     setCart((prevCart) =>
       prevCart.map((item) =>

@@ -29,14 +29,10 @@
   position: absolute;
   top: 0;
   left: 0;
+  margin: 0;
   width: 100%;
   height: 100%;
-  background: rgba(
-    188,
-    110,
-    110,
-    0.5
-  ); /* Slight dark overlay for text readability */
+  background: rgba(94, 50, 113, 0.8); /* Slight dark overlay for text readability */
   z-index: 1;
 }
 

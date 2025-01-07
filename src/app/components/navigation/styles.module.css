@@ -4,19 +4,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--naamani-purple);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
 .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .2rem 0;
   background-color: var(--naamani-green);
   margin: 0;
 }
 
 .banner h3 {
-  margin: 0;
+  margin: 0 .5rem;
   text-align: center;
+  /* font-family: var(--font-manrope); */
+  color: var(--naamani-purple);
+  font-size: .95rem;
+  font-weight: bold;
 }
 
 .container {
@@ -34,6 +43,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 0.75rem;
+  color: white;
 }
 
 .logo a {
@@ -58,8 +68,8 @@
 
 .navLink {
   text-decoration: none;
-  color: var(--naamani-purple);
-  font-size: 1rem;
+  color: var(--naamani-white);
+  font-size: 1.2rem;
   margin: 1.3rem;
 }
 
@@ -73,11 +83,15 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 /* Hamburger Icon */
 .hamburger {
   background: none;
+  display: flex;
+  align-items: center;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -187,8 +201,8 @@
 .totalItems {
   display: flex;
   color: var(--naamani-purple);
-  top: -20px;
-  left: 15px;
+  top: 10px;
+  left: -10px;
   font-family: var(--font-nunito);
   align-items: center;
   justify-content: center;
@@ -260,9 +274,12 @@
   .navLink {
     margin: 0.5rem;
     font-size: 1.75rem;
+    color: var(--naamani-purple);
+
   }
   .mobileOnly {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .desktopOnly {

@@ -7,9 +7,10 @@ import { useCart } from "@/app/contexts/cart";
 type DropdownProps = {
   options: string[] | undefined; // Array of dropdown options
   label: string; // Label for the dropdown
+  handleScent: (scent: string) => void;
 };
 
-export default function Dropdown({ options, label }: DropdownProps) {
+export default function Dropdown({ options, label, handleScent }: DropdownProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +42,7 @@ export default function Dropdown({ options, label }: DropdownProps) {
               key={index}
               className={styles.option}
               // onClick={() => handleSelect(option)}
-              onClick={() => handleSelect(option)}
+              onClick={() => handleScent(option)}
             >
               {option}
             </li>

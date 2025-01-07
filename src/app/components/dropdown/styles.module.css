@@ -80,6 +80,7 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+
     .selected {
       font-size: 0.9rem;
     }

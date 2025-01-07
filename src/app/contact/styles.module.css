@@ -1,0 +1,47 @@
+.contact{
+    padding: 3rem 0 2rem 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.contactHeader{
+    text-align: center;
+}
+
+.contactHeader h1 {
+    margin: 2rem 0 0 0;
+    /* font-family: var(--font-manrope); */
+    color: var(--naamani-purple);
+    font-size: 2.2rem;
+}
+
+.contactHeader p {
+    margin: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebarCard {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.sidebarCard h2, .sidebarCard p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        margin: 2rem 0;
+        width: 90%;
+    }
+}

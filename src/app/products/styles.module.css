@@ -1,0 +1,23 @@
+.productsHeader {
+  color: var(--naamani-purple);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--font-manrope);
+  margin: 2rem 0 0 0;
+}
+
+.contentContainer {
+  display: flex;
+}
+
+.productInfo{
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+  }
+}

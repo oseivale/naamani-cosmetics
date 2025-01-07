@@ -5,11 +5,13 @@ type PageBannerProps = {
   title: string; // Banner title (e.g., "About Us")
   backgroundImage: string;
   children: ReactNode // Path to the background image
+  customBGStyles?: any;
 };
 
 export default function PageBanner({
   title,
   backgroundImage,
+  customBGStyles,
   children
 }: PageBannerProps) {
   return (
@@ -18,6 +20,7 @@ export default function PageBanner({
         className={styles.banner}
         style={{
           backgroundImage: `url(${backgroundImage})`,
+          backgroundPosition: customBGStyles?.bgPosition
         }}
       >
         <div className={styles.overlay}></div>

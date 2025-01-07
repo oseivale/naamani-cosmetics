@@ -192,10 +192,18 @@
     flex-direction: column;
     align-items: center;
   }
+  
+  .featureList li {
+    font-size: 1.1rem;
+  }
+
+  .featureList  {
+    margin: 0;
+  }
 
   .features {
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0rem;
   }
 
   .statistics {
@@ -221,7 +229,7 @@
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .button {

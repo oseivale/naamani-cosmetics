@@ -2,7 +2,7 @@ export const products = [
   {
     id: "1",
     name: "Cleansing Oil for Face",
-    price: 15.0,
+    price: '15',
     availability: 80,
     category: "face",
     description: `We have made this cleansing oil with organic carrier oils high in essential fatty acids, oleic acids, and
@@ -25,7 +25,13 @@ export const products = [
       health care practitioner before use. Not for internal use. Test on a small area of
       skin for skin sensitivity or allergies.`,
     scents: null,
-    variants: [],
+    variants: [
+      {
+        id: "d8cc5c11-77d4-4e55-b931-fa4961778f7e",
+        size: "30ml",
+        price: 15,
+      },
+    ],
     variantHeading: `Choose Your Scent`,
     images: [
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
@@ -36,10 +42,12 @@ export const products = [
   {
     id: "2",
     name: "Body Butter",
-    price: 25.0,
+    // price: 25.0,
+    price: '8-25',
     availability: 80,
     featured: true,
     category: "body",
+    categories: ["Body"],
     description: `We formulate our body butter with natural and organic products.
         We manufacture all our products in small batches at a time to ensure we maintain
         freshness. This rich, velvety blend of cocoa butter with Tahitian Vanilla Fragrance
@@ -82,7 +90,7 @@ export const products = [
   {
     id: "3",
     name: "Face Oil",
-    price: 25.0,
+    price: '25',
     availability: 80,
     category: "face",
     featured: true,
@@ -127,7 +135,7 @@ export const products = [
   {
     id: "4",
     name: "Face Cream for Dry Skin",
-    price: 37.0,
+    price: '37',
     availability: 80,
     category: "face",
     description: `This formulation is a rich cream, perfect for dry skin to provide
@@ -168,7 +176,7 @@ export const products = [
   {
     id: "5",
     name: "Face Cream for Combination Skin",
-    price: 37.0,
+    price: '37',
     availability: 80,
     category: "face",
     featured: true,
@@ -210,7 +218,7 @@ export const products = [
   {
     id: "6",
     name: "Face Cream for Oily Skin",
-    price: 37.0,
+    price: '37',
     availability: 80,
     category: "face",
     description: `This face cream is a blend of Shea butter with oils that are easily
@@ -251,9 +259,9 @@ export const products = [
     ],
   },
   {
-    id: "6",
+    id: "7",
     name: "Face Serum",
-    price: 25.0,
+    price: '25',
     availability: 80,
     category: "face",
     description: `We formulate our Face Oils to provide valuable nutrients and moisture to the skin.

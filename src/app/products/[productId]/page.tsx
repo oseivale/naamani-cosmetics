@@ -82,27 +82,12 @@ export default async function ProductPage({
             </button>
           </div> */}
 
-          <div>
-            {product.variants.length > 1 && (
-              <p className={styles.sizeHeader}>Select Size</p>
-            )}
-            {/* <p className={styles.productSingleSize}>{product.productSingleSize && product.productSingleSize}</p> */}
-            {product.variants.length === 1 && (
-              <p className={styles.productSingleSize}>
-                Size: {product.variants[0].size}
-              </p>
-            )}
-            {product?.variants?.map((variant) => {
-              // return <button className={styles.variant}>{variant.size}</button>;
-              if (product.variants.length > 1)
-                return <VariantButton key={variant.id} variant={variant.size} />;
-            })}
-          </div>
-          {product?.scents && (
+ 
+          {/* {product?.scents && (
             <div>
               <Dropdown options={product?.scents} label="Select Scent" />
             </div>
-          )}
+          )} */}
 
           {/* <p>Select your Scent</p> */}
           {/* <div>
@@ -113,10 +98,11 @@ export default async function ProductPage({
 
           <div className={styles.addToCart}>
             <AddToCartButton
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.images[0]}
+              // id={product.id}
+              // name={product.name}
+              // price={product.basePrice}
+              // image={product.images[0]}
+              product={product}
             />
             {/* <div className={styles.addToCartButtonContainer}>
               <button className={styles.addToCartButton}><CartAdd />Add to Cart</button>
@@ -222,3 +208,10 @@ export default async function ProductPage({
     </div>
   );
 }
+
+
+// TO DO:
+// Fix Locale Storage so that it persists correctly
+// fix add to cart button for variants so that it is only enabled once all manadotroy variants have been selected 
+
+// (Possibly) create FAQ page ? 

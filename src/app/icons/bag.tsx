@@ -7,7 +7,7 @@ export const Bag = () => (
   >
     <path
       fill="none"
-      stroke="#684d9a"
+      stroke="var(--naamani-green)"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="1.5"

@@ -75,16 +75,12 @@ export default function HeroBanner() {
         {/* <img className={styles.img} alt={'#'} src={'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} width={200} /> */}
 
         </div>
-        <div
+        {/* <div
           className={`${styles.rightImage} ${
             animateImages ? styles.animateSlideUp : ""
           }`}
         >
-          {/* <img
-            className={styles.img}
-            src="http://archivo.halodemo.com/wp-content/uploads/2022/06/serum-with-herbal-extracts-for-skincare-flat-lay-minimalism.jpg"
-            alt="Right Skincare Items"
-          /> */}
+      
           <Image
             className={styles.img}
             src={'https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220'}
@@ -94,7 +90,7 @@ export default function HeroBanner() {
             width={1000}
           />
 
-        </div>
+        </div> */}
         
       </div>
     </div>

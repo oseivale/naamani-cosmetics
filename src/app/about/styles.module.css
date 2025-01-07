@@ -1,5 +1,133 @@
+.headerContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .mainHeader {
-    color: var(--naamani-purple);
-    font-weight: 700;
-    font-size: 2rem;
+  color: var(--naamani-purple);
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 0;
+  font-family: var(--font-manrope);
+  height: 75px;
+}
+
+.subheader {
+  margin: 0.75rem 0;
+}
+
+.iconCard {
+  border-radius: 5px;
+  padding: 1rem;
+  width: 100%;
+  background-color: #f7f8f8;
+  /* background-color: var(--naamani-purple); */
+  color: var(--naamani-black);
+  /* height: 10vh; */
+}
+
+.iconCardWrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.iconCardHeader {
+  font-size: 1rem;
+  font-family: var(--font-manrope);
+  margin: 0;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.iconBackground {
+  background-color: var(--naamani-green);
+  border-radius: 100%;
+  height: 60px;
+  width: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1.5px solid var(--naamani-purple); */
+}
+
+.cardText {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.bioWrapper {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.bioHeader {
+  color: var(--naamani-purple);
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+  font-family: var(--font-manrope);
+  line-height: 32px;
+}
+
+.highlightCard {
+  /* border: 1px solid var(--naamani-purple); */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--naamani-green);
+  border-radius: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-width: 120px;
+  height: 120px;
+}
+
+.highlightCard h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: var(--font-manrope);
+}
+
+.highlightsWrapper {
+  gap: 2rem;
+  margin: 3rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.faqs {
+  /* display: flex; */
+  width: 100%;
+ 
+}
+
+.infoWrapper {
+  text-align: center;
+}
+
+.infoWrapper p {
+    margin: 0;
+}
+
+.infoWrapper strong {
+    display: block;
+    font-size: 1.2rem;
+    margin: 0 0 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .iconCardWrapper {
+    flex-direction: column;
+  }
+
+  .iconCard {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .faqs {
+    flex-direction: column;
+  }
 }
