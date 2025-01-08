@@ -187,15 +187,16 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
   }
 
   .textSection {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
 
   .heroContainer {
     flex-direction: column;
+    height: 90vh;
   }
 
   .imageSection {

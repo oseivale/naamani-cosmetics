@@ -11,7 +11,7 @@ export default function SectionOne() {
         <div className={styles.contentWrapper}>
           <div>
             {" "}
-            <div className={styles.contentWrapper}>
+            <div>
               {/* Left Image */}
               {/* <div className={styles.imageWrapper}>
                 <Image
