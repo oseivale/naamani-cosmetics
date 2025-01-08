@@ -71,9 +71,10 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     <>
       {/* Size Selector */}
       {hasMultipleVariants && (
-        <div>
+        <div className={styles.sizeSelector}>
           <p>Select Size:</p>
-          {product.variants?.map((variant) => (
+          <div className={styles.sizeSelectorButtonWrapper}>
+             {product.variants?.map((variant) => (
             <button
               key={variant.id}
               onClick={() => setSelectedVariant(variant)}
@@ -89,6 +90,8 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
               </span> 
             </button>
           ))}
+          </div>
+         
         </div>
       )}
 

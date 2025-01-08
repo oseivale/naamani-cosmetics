@@ -3,6 +3,24 @@
     margin: 0 auto;
 }
 
+.emptyCartText {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emptyCartText p {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.backToProducts {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
 .cartItems {
     display: flex;
     align-items: center;

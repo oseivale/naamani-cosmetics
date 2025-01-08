@@ -125,7 +125,7 @@ export default function Navigation() {
           <h2>Your Cart</h2>
           {!cart.length && <p>Your cart is empty.</p>}
           {cart.length > 0 ? (
-            <div>
+            <div className={styles.cartContent}>
               <ul className={styles.cartItemsWrapper}>
                 {cart.map((item) => {
                   return (

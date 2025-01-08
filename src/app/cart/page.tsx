@@ -21,7 +21,12 @@ export default function CartPage() {
   // const [updatedQuantity, setUpdatedQuantity] = useState(1);
 
   if (cart.length === 0) {
-    return <p>Your cart is empty.</p>;
+    return (
+      <div className={styles.emptyCartText}>
+        <p>Your cart is empty.</p>
+        <Link className={styles.backToProducts} href={'/products'}>Back to Shop</Link>
+      </div>
+    );
   }
 
   // const handleQuantityChange = (quantity: number) => {
@@ -38,7 +43,12 @@ export default function CartPage() {
             key={`${item.id}--${item.size}-${item.scent}`}
             style={{ marginBottom: "1rem" }}
           >
-            <Image src={item.image} alt={item.name} width={1000} height={1000} />
+            <Image
+              src={item.image}
+              alt={item.name}
+              width={1000}
+              height={1000}
+            />
             <div className={styles.cartData}>
               <h2 className={styles.itemName}>{item.name}</h2>
               {item.scent || item.size ? (

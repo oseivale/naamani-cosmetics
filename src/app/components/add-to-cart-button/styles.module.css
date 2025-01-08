@@ -1,26 +1,26 @@
 .addToCartButton {
-    /* display: inline-block; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--naamani-purple);
-    gap: 1rem;
-    color: white;
-    padding: .75rem 1.2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    /* text-transform: uppercase; */
-    width: 100%;
-    font-size: 1.2rem;
-    font-family: var(--font-nunito);
-  }
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--naamani-purple);
+  gap: 1rem;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* text-transform: uppercase; */
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: var(--font-nunito);
+}
 
-  .addToCartButtonContainer{
-    width: 100%;
-    font-family: var(--font-nunito);
-  }
+.addToCartButtonContainer {
+  width: 100%;
+  font-family: var(--font-nunito);
+}
 
 .variantText {
   display: flex;
@@ -34,30 +34,31 @@
 }
 
 .variantSize {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 20px;
 }
-  
-  .addToCartButton:hover {
-    background-color: var(--naamani-green);
-    color: var(--naamani-purple);
-  }
 
-  .addToCartButton:active, .addToCartButton:focus {
-    background-color: var(--naamani-purple);
-    color: var(--naamani-white);
-  }
+.addToCartButton:hover {
+  background-color: var(--naamani-green);
+  color: var(--naamani-purple);
+}
 
-  .addToCartButton:disabled {
-    background-color: #ccc;
-    color: grey;
-  }
-  
-  .quantityLabel {
-    margin-bottom: 0;
-  }
+.addToCartButton:active,
+.addToCartButton:focus {
+  background-color: var(--naamani-purple);
+  color: var(--naamani-white);
+}
 
-  /* General container for selectors */
+.addToCartButton:disabled {
+  background-color: #ccc;
+  color: grey;
+}
+
+.quantityLabel {
+  margin-bottom: 0;
+}
+
+/* General container for selectors */
 .selectorContainer {
   margin-bottom: 16px;
 }
@@ -68,13 +69,17 @@
   margin-bottom: 8px;
 }
 
+.sizeSelectorButtonWrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
 /* Buttons for size and scent options */
 .button {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 8px 16px;
-  margin: 4px;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -188,13 +193,17 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
   .selected {
     font-size: 0.9rem;
   }
 
   .option {
     font-size: 0.9rem;
+  }
+
+  .sizeSelectorButtonWrapper {
+    display: flex;
+    gap: 1.5rem;
   }
 }
 

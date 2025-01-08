@@ -100,7 +100,6 @@
 .faqs {
   /* display: flex; */
   width: 100%;
- 
 }
 
 .infoWrapper {
@@ -108,26 +107,52 @@
 }
 
 .infoWrapper p {
-    margin: 0;
+  margin: 0;
 }
 
 .infoWrapper strong {
-    display: block;
-    font-size: 1.2rem;
-    margin: 0 0 2rem 0;
+  display: block;
+  font-size: 1.2rem;
+  margin: 0 0 2rem 0;
 }
 
 @media (max-width: 768px) {
+  .headerContainer {
+    text-align: center;
+    margin-top: 2rem;
+    margin: 2rem 1rem;
+  }
+
   .iconCardWrapper {
     flex-direction: column;
   }
 
   .iconCard {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
   }
 
   .faqs {
     flex-direction: column;
+  }
+
+  .bioWrapper {
+    text-align: center;
+    margin: 4rem 1rem;
+  }
+
+  .highlightsWrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+  
+  .highlightCard {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+  }
+  
+  .highlightCard h2 {
+    font-size: .9rem;
   }
 }

@@ -66,6 +66,7 @@
 }
 
 .infoWrapper {
+    padding: 1rem;
   text-align: center;
 }
 
@@ -92,5 +93,13 @@
 @media (max-width: 768px) {
   .safetyIcon {
     width: 70%;
+  }
+
+  .safetyHeader {
+    margin-top: 2rem;
+  }
+
+  .faqWrapper{
+    padding: 0 1rem;
   }
 }
