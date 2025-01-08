@@ -1,10 +1,7 @@
 
-import Image from "next/image";
+
 import styles from "./styles.module.css";
-import Link from "next/link";
-import { NaamaniCanada } from "@/app/icons/naamani-canada";
-import { NaturalResources } from "@/app/icons/natural-resources";
-import { NaamaniEarth } from "@/app/icons/naamani-earth";
+
 
 export default function SectionOne() {
   return (
