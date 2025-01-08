@@ -2,6 +2,9 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import Link from "next/link";
+import { NaamaniCanada } from "@/app/icons/naamani-canada";
+import { NaturalResources } from "@/app/icons/natural-resources";
+import { NaamaniEarth } from "@/app/icons/naamani-earth";
 
 export default function SectionOne() {
   return (
@@ -13,7 +16,7 @@ export default function SectionOne() {
             {" "}
             <div className={styles.contentWrapper}>
               {/* Left Image */}
-              <div className={styles.imageWrapper}>
+              {/* <div className={styles.imageWrapper}>
                 <Image
                 src={'https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220'}
                   // src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?q=80&w=3330&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image path
@@ -22,10 +25,10 @@ export default function SectionOne() {
                   height={1000}
                   className={styles.image}
                 />
-              </div>
+              </div> */}
 
               {/* Right Content */}
-              <div className={styles.card}>
+              {/* <div className={styles.card}>
                 <h2 className={styles.heading}>Our Story</h2>
                 <p className={styles.description}>
                   We strive to purchase all our raw materials from reputable
@@ -36,7 +39,8 @@ export default function SectionOne() {
                 <Link href={"/about"} className={styles.learnMore}>
                   Learn More
                 </Link>
-              </div>
+              </div> */}
+           
             </div>
             {/* Statistics Section */}
             {/* <div className={styles.statistics}>
@@ -56,7 +60,7 @@ export default function SectionOne() {
           </div>
           <div className={styles.textContent}>
             <h2 className={styles.heading}>
-              Expert Skincare For <br /> Your Beautiful Skin
+              Expert Skincare For Your Beautiful Skin
             </h2>
             <p className={styles.description}>
               Our goal is to create natural products for skin care with love and
@@ -68,15 +72,20 @@ export default function SectionOne() {
               <ul className={styles.featureList}>
                 <li>Face Serums</li>
                 <li>Rejuvenating Face Oil</li>
-                <li>Nourishing Facial Moisturizers</li>
+               
               </ul>
               <ul className={styles.featureList}>
                 <li>Moisturizing Body Butters</li>
+                <li>Nourishing Facial Moisturizers</li>
+              </ul>
+              <ul className={styles.featureList}>
                 <li>Clarifying Oil Cleansers</li>
               </ul>
             </div>
             {/* <button className={styles.button}>Learn More</button> */}
+            
           </div>
+          
         </div>
       </div>
     </section>

@@ -1,0 +1,122 @@
+.sectionTwo h1 {
+  text-align: center;
+  color: var(--naamani-purple);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.concernCard {
+  height: 15rem;
+  display: flex;
+  background-color: var(--naamani-grey-extra-light);
+  width: 10rem;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 3px;
+  /* font-family: var(--font-manrope); */
+  font-family: var(--font-nunito);
+  font-size: 1.4rem;
+
+  /* border: 1px solid var(--naamani-purple); */
+  /* font-weight: bold; */
+}
+
+.concernsGrid {
+  max-width: 1100px;
+  margin: 4rem auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.concernLabel {
+  background-color: var(--naamani-green);
+  width: 70%;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 3px;
+  color: var(--naamani-purple);
+}
+
+.highlightCard {
+  /* border: 1px solid var(--naamani-purple); */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--naamani-green);
+  border-radius: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-width: 120px;
+  height: 120px;
+}
+
+.highlightCard h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: var(--font-manrope);
+}
+
+.highlightsWrapper {
+  gap: 2rem;
+  margin: 0 0 3rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.sectionTwoBanner {
+  background-color: var(--naamani-purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.testCopyHeader {
+  color: white !important;
+  margin: 2rem 0 0 0;
+  line-height: 40px;
+}
+
+.testCopy h2 {
+  padding: 1rem 0;
+  margin: 0 0 2rem 0;
+  font-size: 1.9rem;
+  line-height: 30px;
+  /* font-weight: bold; */
+  max-width: 1100px;
+  text-align: center;
+  /* color: var(--naamani-green); */
+  color: var(--naamani-white);
+  font-family: var(--font-manrope);
+}
+
+@media (max-width: 768px) {
+  .concernsGrid {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .highlightCard {
+    max-width: 110px;
+    max-height: 110px;
+  }
+
+  .highlightCard h2 {
+    margin: 0;
+    font-size: .95rem;
+    font-family: var(--font-manrope);
+  }
+
+  .testCopy h2 {
+    margin: 0 1rem 1rem;
+  }
+}
+/* Proudly
+          Canadian, we craft our products locally using ingredients sourced with
+          care, ensuring every bottle supports local communities while reducing
+          our carbon footprint. */

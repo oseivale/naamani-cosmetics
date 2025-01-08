@@ -31,8 +31,11 @@ export default function Footer() {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/faq">FAQ</Link>
+            </li> */}
+            <li>
+              <Link href="/ingredient-glossary">Ingredient Glossary</Link>
             </li>
           </ul>
         </div>

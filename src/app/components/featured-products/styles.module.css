@@ -14,7 +14,8 @@
 }
 
 .sectionWrapper {
-  /* background-color: var(--naamani-green); */
+  padding: 2rem 0 3rem 0;
+  background-color: var(--naamani-grey-extra-light);
 }
 
 .contentWrapper {

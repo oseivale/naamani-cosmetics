@@ -1,12 +1,15 @@
 import HeroBanner from "./components/hero";
 import FeaturedProducts from "./components/featured-products";
 import SectionOne from "./components/section-one";
+import Link from "next/link";
+import SectionTwo from "./components/section-two";
 
 export default function Home() {
   return (
     <div>
       <HeroBanner />
       <SectionOne />
+      <SectionTwo />
       <FeaturedProducts />
       {/* <h1>HOME Page</h1>
       <h2>Naamani Cosmetics</h2>

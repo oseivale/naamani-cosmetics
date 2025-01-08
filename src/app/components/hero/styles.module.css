@@ -6,9 +6,11 @@
      
   background-size: cover;
   z-index: 100; */
+
 }
 
-.heroContainer {
+.heroContainer {  
+  height: 65vh;
   display: flex;
   flex-direction: row;
   align-items: center;
