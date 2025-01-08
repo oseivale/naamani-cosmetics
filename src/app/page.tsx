@@ -1,7 +1,6 @@
 import HeroBanner from "./components/hero";
 import FeaturedProducts from "./components/featured-products";
 import SectionOne from "./components/section-one";
-import Link from "next/link";
 import SectionTwo from "./components/section-two";
 
 export default function Home() {
