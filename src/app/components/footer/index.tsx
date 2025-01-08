@@ -9,12 +9,6 @@ export default function Footer() {
       <div className={styles.container}>
         {/* Logo Section */}
         <div className={styles.logoSection}>
-          {/* <Image
-            src="/images/logo.png" // Replace with your logo path
-            alt="Naamani Cosmetics Logo"
-            width={150}
-            height={50}
-          /> */}
           <NaamaniSecond />
         </div>
 
@@ -44,55 +38,13 @@ export default function Footer() {
         <div className={styles.socialSection}>
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
-            {/* <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/images/facebook-icon.png" // Replace with your Facebook icon
-                alt="Facebook"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/images/twitter-icon.png" // Replace with your Twitter icon
-                alt="Twitter"
-                width={24}
-                height={24}
-              />
-            </a> */}
             <Link
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* <Image
-                src="/images/instagram-icon.png" // Replace with your Instagram icon
-                alt="Instagram"
-                width={24}
-                height={24}
-              /> */}
               <Instagram />
             </Link>
-            {/* <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/images/linkedin-icon.png" // Replace with your LinkedIn icon
-                alt="LinkedIn"
-                width={24}
-                height={24}
-              />
-            </a> */}
           </div>
         </div>
       </div>

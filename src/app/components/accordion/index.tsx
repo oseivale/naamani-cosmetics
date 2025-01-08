@@ -3,15 +3,8 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import { Arrow } from "@/app/icons/arrow";
+import { AccordionProps } from "@/app/types/accordion";
 
-type AccordionItem = {
-  title: string;
-  content: string | React.ReactNode;
-};
-
-type AccordionProps = {
-  items: AccordionItem[];
-};
 
 export default function Accordion({ items }: AccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

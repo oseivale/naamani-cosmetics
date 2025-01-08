@@ -1,39 +1,18 @@
 "use client";
 
 import { useCart } from "@/app/contexts/cart";
-// import { useVariant } from "../contexts/VariantContext";
 import styles from "./styles.module.css";
-
-type VariantButtonProps = {
-  variant: string;
-};
+import { VariantButtonProps } from "@/app/types/variant-button";
 
 export default function VariantButton({ variant }: VariantButtonProps) {
-    // const { selectedVariant, setSelectedVariant } = useVariant();
-    // const  [isActive, setIsActive] = useState(false)
+  const { handleSizeChange, size } = useCart();
 
-    // const isActive = selectedVariant === variant;
-  
-
-  //   const handleClick = () => { 
-  //     setSelectedVariant(variant);
-  //   };
-  const { handleSizeChange, size } =
-  useCart();
-
-  const isActive = size === variant
-
-  // const test = () => {
-  //   handleSizeChange(variant)
-  //   setIsActive(!isActive)
-  // }
+  const isActive = size === variant;
 
   return (
     <button
       className={`${styles.variant} ${isActive ? styles.active : ""}`}
       onClick={() => handleSizeChange(variant)}
-        // className={`${styles.variantButton} ${isActive ? styles.active : ""}`}
-      //   onClick={handleClick}
     >
       {variant}
     </button>

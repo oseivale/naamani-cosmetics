@@ -233,7 +233,11 @@
 }
 
 .removeBtn svg {
-  height: 20px;
+  height: 25px;
+}
+
+.removeBtn svg:hover {
+  cursor: pointer;
 }
 
 .quantityInput {

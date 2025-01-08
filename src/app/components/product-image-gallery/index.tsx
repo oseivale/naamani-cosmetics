@@ -3,11 +3,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-
-type ProductImageGalleryProps = {
-  images: string[]; // Array of product images
-  productName: string; // Name of the product
-};
+import { ProductImageGalleryProps } from "@/app/types/product";
 
 export default function ProductImageGallery({
   images,

@@ -11,7 +11,6 @@ import { Trash } from "@/app/icons/trash";
 import Image from "next/image";
 import { Shipping } from "@/app/icons/shipping";
 
-
 export default function Navigation() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -21,13 +20,13 @@ export default function Navigation() {
     triggerCartDrawerOpen,
     triggerCartDrawerClose,
     totalItems,
-    totalAmount
+    totalAmount,
   } = useCart();
 
   return (
     <header className={styles.header}>
       <div className={styles.banner}>
-      <Shipping /> 
+        <Shipping />
         <h3>Free shipping on CAD $50+</h3>
       </div>
       <div className={styles.container}>
@@ -129,8 +128,17 @@ export default function Navigation() {
               <ul className={styles.cartItemsWrapper}>
                 {cart.map((item) => {
                   return (
-                    <li className={styles.cartItem} key={`${item.id}--${item.size}-${item.scent}`}>
-                      <Image className={styles.cartItemImage} src={item.image} height={1000} width={1000} alt={"#"}/>
+                    <li
+                      className={styles.cartItem}
+                      key={`${item.id}--${item.size}-${item.scent}`}
+                    >
+                      <Image
+                        className={styles.cartItemImage}
+                        src={item.image}
+                        height={1000}
+                        width={1000}
+                        alt={"#"}
+                      />
                       {cart.length && (
                         <div className={styles.itemWrapper}>
                           <div>
@@ -165,8 +173,12 @@ export default function Navigation() {
                   );
                 })}
               </ul>
-              <h2 className={styles.totalText}>Total: ${totalAmount.toFixed(2)}*</h2>
-              <p className={styles.shippingText}>*Shipping calculated at checkout</p>
+              <h2 className={styles.totalText}>
+                Total: ${totalAmount.toFixed(2)}*
+              </h2>
+              <p className={styles.shippingText}>
+                *Shipping calculated at checkout
+              </p>
               {cart.length > 0 ? (
                 <Link className={styles.viewCartBtn} href={"/cart"}>
                   View Cart

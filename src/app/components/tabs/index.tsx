@@ -2,15 +2,8 @@
 
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import { TabsProps } from "@/app/types/tabs";
 
-type Tab = {
-  label: string;
-  content: React.ReactNode;
-};
-
-type TabsProps = {
-  tabs: Tab[];
-};
 
 export default function Tabs({ tabs }: TabsProps) {
   const [activeTab, setActiveTab] = useState(0); // Default to the first tab

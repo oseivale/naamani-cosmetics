@@ -4,35 +4,28 @@ import styles from "./styles.module.css";
 import { Minus } from "@/app/icons/minus";
 import { Add } from "@/app/icons/add";
 import { useCart } from "@/app/contexts/cart";
-
-type QuantitySelectorProps = {
-  onQuantityChange: (quantity: number) => void; // Callback for parent to get the quantity
-  initialQuantity?: number; // Optional initial quantity
-  quantityTest: number;
-};
+import { QuantitySelectorProps } from "@/app/types/quantity-selector";
 
 export default function QuantitySelector({
-  quantityTest
-  
+  quantityTest,
 }: QuantitySelectorProps) {
-//   const [quantity, setQuantity] = useState(initialQuantity);
+  //   const [quantity, setQuantity] = useState(initialQuantity);
 
-  const { handleIncrease, handleDecrease } =
-    useCart();
+  const { handleIncrease, handleDecrease } = useCart();
 
-//   const handleIncrease = () => {
-//     const newQuantity = quantity + 1;
-//     setQuantity(newQuantity);
-//     onQuantityChange(newQuantity);
-//   };
+  //   const handleIncrease = () => {
+  //     const newQuantity = quantity + 1;
+  //     setQuantity(newQuantity);
+  //     onQuantityChange(newQuantity);
+  //   };
 
-//   const handleDecrease = () => {
-//     if (quantity > 1) {
-//       const newQuantity = quantity - 1;
-//       setQuantity(newQuantity);
-//       onQuantityChange(newQuantity);
-//     }
-//   };
+  //   const handleDecrease = () => {
+  //     if (quantity > 1) {
+  //       const newQuantity = quantity - 1;
+  //       setQuantity(newQuantity);
+  //       onQuantityChange(newQuantity);
+  //     }
+  //   };
 
   return (
     <div className={styles.quantity}>

@@ -1,13 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 import Image from "next/image";
-
-interface ProductCardProps {
-  name: string;
-  price: number;
-  description: string; 
-  id: string; 
-}
+import { ProductCardProps } from "@/app/types/product";
 
 export default function ProductCard({ name, price, description, id}: ProductCardProps) {
   return (

@@ -58,9 +58,14 @@ export default function SectionTwo() {
       </div>
       <div className={styles.sectionTwoBanner}>
         <div className={styles.testCopy}>
-          <h1 className={styles.testCopyHeader}>Naturally Canadian. Naturally Caring.</h1>
-          <h2> At the heart of our skincare lies a commitment to what matters
-            most — your skin, your environment, and our shared home.</h2>
+          <h1 className={styles.testCopyHeader}>
+            Naturally Canadian. Naturally Caring.
+          </h1>
+          <h2>
+            {" "}
+            At the heart of our skincare lies a commitment to what matters most
+            — your skin, your environment, and our shared home.
+          </h2>
           {/* <h2>
            
             Proudly Canadian, we craft our products locally using ingredients

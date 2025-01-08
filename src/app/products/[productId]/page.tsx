@@ -14,9 +14,8 @@ async function getProduct(id: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: { productId: string }
+  params: { productId: string };
 }): Promise<Metadata> {
-
   const product = await getProduct(params.productId);
 
   if (!product) {
@@ -34,8 +33,8 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: { productId: string }
-}){
+  params: { productId: string };
+}) {
   const product = await getProduct(params.productId);
 
   if (!product) {
@@ -51,8 +50,8 @@ export default async function ProductPage({
     <div className={styles.container}>
       {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
-        <Link href="/">Home</Link> &gt; <Link href="/products">All Products</Link> &gt;{" "}
-        {product.name}
+        <Link href="/">Home</Link> &gt;{" "}
+        <Link href="/products">All Products</Link> &gt; {product.name}
       </div>
 
       <div className={styles.productSection}>
@@ -80,7 +79,6 @@ export default async function ProductPage({
             </button>
           </div> */}
 
- 
           {/* {product?.scents && (
             <div>
               <Dropdown options={product?.scents} label="Select Scent" />
@@ -127,9 +125,11 @@ export default async function ProductPage({
                   <div className={styles.directions}>
                     <h3>Directions for Use</h3>
                     <ol>
-                      {product?.directions?.split("|").map((direction, index) => (
-                        <li key={index}>{direction}</li>
-                      ))}
+                      {product?.directions
+                        ?.split("|")
+                        .map((direction, index) => (
+                          <li key={index}>{direction}</li>
+                        ))}
                     </ol>
                   </div>
                 ),
@@ -207,9 +207,8 @@ export default async function ProductPage({
   );
 }
 
-
 // TO DO:
 // Fix Locale Storage so that it persists correctly
-// fix add to cart button for variants so that it is only enabled once all manadotroy variants have been selected 
+// fix add to cart button for variants so that it is only enabled once all manadotroy variants have been selected
 
-// (Possibly) create FAQ page ? 
+// (Possibly) create FAQ page ?

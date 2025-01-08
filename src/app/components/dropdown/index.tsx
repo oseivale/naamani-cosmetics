@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import styles from "./styles.module.css";
-
-type DropdownProps = {
-  options: string[] | undefined; // Array of dropdown options
-  label: string; // Label for the dropdown
-  handleScent: (scent: string) => void;
-};
+import { DropdownProps } from "@/app/types/dropdown";
 
 export default function Dropdown({ options, label, handleScent }: DropdownProps) {
   const [selected] = useState<string | null>(null);

@@ -1,12 +1,6 @@
+import { PageBannerProps } from "@/app/types/page-wrapper";
 import styles from "./styles.module.css";
 import { ReactNode } from "react";
-
-type PageBannerProps = {
-  title: string; // Banner title (e.g., "About Us")
-  backgroundImage: string;
-  children: ReactNode; // Path to the background image
-  customBGStyles?: { bgPosition?: string };
-};
 
 export default function PageBanner({
   title,
