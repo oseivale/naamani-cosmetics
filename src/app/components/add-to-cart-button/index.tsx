@@ -6,12 +6,14 @@ import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
 import { AddToCartButtonProps, Variant } from "@/app/types/add-to-cart-button";
-
+import { Confirm } from "@/app/icons/confirm";
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart, quantity, handleQuantityChange } = useCart();
 
-  const hasMultipleVariants =  product?.variants?.length ?  product?.variants?.length > 1 : false; // Check if the product has multiple size options
+  const hasMultipleVariants = product?.variants?.length
+    ? product?.variants?.length > 1
+    : false; // Check if the product has multiple size options
   const isSingleVariant = product.variants?.length === 1; // Check if there's only one size option
 
   // State for the selected variant and scent
@@ -74,24 +76,34 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
         <div className={styles.sizeSelector}>
           <p>Select Size:</p>
           <div className={styles.sizeSelectorButtonWrapper}>
-             {product.variants?.map((variant) => (
-            <button
-              key={variant.id}
-              onClick={() => setSelectedVariant(variant)}
-              className={
-                selectedVariant?.id === variant.id
-                  ? styles.selectedButton
-                  : styles.button
-              }
-            >
-              <span className={styles.variantText}>
-                <span className={styles.variantPrice}>${variant.price}</span>
-                <span className={styles.variantSize}>{variant.size}</span>
-              </span> 
-            </button>
-          ))}
+            {product.variants?.map((variant) => (
+              <button
+                key={variant.id}
+                onClick={() => setSelectedVariant(variant)}
+                className={
+                  selectedVariant?.id === variant.id
+                    ? styles.selectedButton
+                    : styles.button
+                }
+              >
+                <div
+                  className={
+                    selectedVariant?.id === variant.id
+                      ? styles.selectedCheck
+                      : styles.unselectedCheck
+                  }
+                >
+                  {" "}
+                  <Confirm />
+                </div>
+
+                <span className={styles.variantText}>
+                  <span className={styles.variantPrice}>${variant.price}</span>
+                  <span className={styles.variantSize}>{variant.size}</span>
+                </span>
+              </button>
+            ))}
           </div>
-         
         </div>
       )}
 
