@@ -9,59 +9,6 @@ import {
 } from "react";
 import { ProductItem } from "../types/add-to-cart-button";
 
-// export type CartItem = {
-//   id: string;
-//   name: string;
-//   price: number;
-//   quantity: number;
-//   image: string;
-//   size?: string;
-//   scent?: string;
-// };
-
-// interface Product {
-//   id: string;
-//   name: string;
-//   basePrice: number; // Base price for the product
-//   availability: number;
-//   featured: boolean;
-//   category: string;
-//   description: string;
-//   scents?: string[]; // Optional array of scents
-//   variants: Variant[]; // Array of variants
-//   images: string[];
-// }
-
-// interface Variant {
-//   id: string;
-//   size: string;
-//   price: number;
-// }
-
-// interface Product {
-//   id: string;
-//   name: string;
-//   basePrice?: number;
-//   price?: number;
-//   availability?: number;
-//   featured?: boolean;
-//   category?: string;
-//   description?: string;
-//   ingredients?: string;
-//   directions?: string;
-//   caution?: string;
-//   scents?: string[];
-//   variants?: Variant[];
-//   variantHeading?: string; 
-//   images?: string[];
-// }
-
-// interface Variant {
-//   id: string;
-//   size: string;
-//   price: number;
-// }
-
 interface CartItem {
   id: string;
   name: string;
@@ -74,7 +21,7 @@ interface CartItem {
 
 type AddToCart = (
   product: ProductItem,
-  selectedVariantId: string| null,
+  selectedVariantId: string | null,
   quantity?: number,
   selectedScent?: string | null
 ) => void;
@@ -83,7 +30,6 @@ type CartContextType = {
   cart: CartItem[];
   size: string;
   scent: string;
-  // addToCart: (item: CartItem) => void;
   addToCart: AddToCart;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
@@ -94,8 +40,6 @@ type CartContextType = {
   totalAmount: number;
   totalItems: number;
   quantity: number;
-  // isDisabled: boolean; 
-  // handleButtonClick: () => void;
   handleIncrease: () => void;
   handleDecrease: () => void;
   handleQuantityChange: (quantity: number) => void;
@@ -147,74 +91,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // const addToCart = (item: CartItem) => {
-  //   setCart((prevCart) => {
-  //     const existingItem = prevCart.find((i) => i.size === item.size && i.scent === item.scent);
-  //     if (existingItem) {
-  //       return prevCart.map((i) =>
-  //         i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
-  //       );
-  //     }
-  //     return [...prevCart, item];
-  //   });
-
-  //   // setIsCartDrawerOpen(true)
-  // };
-
-
-
-  // const handleButtonClick = () => {
-  
-  //   if (isDisabled) {
-  //     console.log('isDisabled', isDisabled)
-  //     alert("Button is disabled. You cannot perform this action!");
-  //   } else {
-  //     console.log("Button clicked!");
-  //   }
-  // };
-
-  // const addToCart = (item: CartItem) => {
- 
-
-  //   setCart((prevCart) => {
-
-  //     // Check for an existing item with the same size and scent
-  //     const existingItem = prevCart.find(
-  //       (i) =>
-  //         i.id === item.id &&
-  //         i.size === item.size &&
-  //         (i.scent === item.scent || i.scent === undefined)
-  //     );
-
-  //     if (existingItem) {
-  //       // If item already exists in the cart, update its quantity
-  //       return prevCart.map((i) =>
-  //         i.id === existingItem.id &&
-  //         i.size === existingItem.size &&
-  //         (i.scent === existingItem.scent || i.scent === undefined)
-  //           ? { ...i, quantity: i.quantity + item.quantity }
-  //           : i
-  //       );
-  //     }
-  
-  //     // Otherwise, add a new line item to the cart
-  //     return [...prevCart, item];
-  //   });
-
-  //   // Optionally open the cart drawer (uncomment if needed)
-  //   // setIsCartDrawerOpen(true);
-  // };
-
-  const addToCart: AddToCart = (product, selectedVariantId: string | null, quantity: number = 1, selectedScent: string | null = null) => {
+  const addToCart: AddToCart = (
+    product,
+    selectedVariantId: string | null,
+    quantity: number = 1,
+    selectedScent: string | null = null
+  ) => {
     const selectedVariant = product?.variants?.find(
       (variant) => variant.id === selectedVariantId
     );
-  
+
     if (!selectedVariant) {
       console.error("Selected variant not found!");
       return;
     }
-  
+
     setCart((prevCart) => {
       // Check if the same variant and scent already exist in the cart
       const existingItem = prevCart.find(
@@ -223,7 +114,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           item.size === selectedVariant.size &&
           item.scent === selectedScent
       );
-  
+
       if (existingItem) {
         // Update the quantity if the item already exists
         return prevCart.map((item) =>
@@ -234,7 +125,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             : item
         );
       }
-  
+
       // Add a new item if it doesn't exist
       const newItem: CartItem = {
         id: product.id,
@@ -243,12 +134,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         scent: selectedScent,
         price: selectedVariant.price,
         quantity: quantity,
-        image: product.images ? product.images[0]: ''
+        image: product.images ? product.images[0] : "",
       };
-  
+
       return [...prevCart, newItem];
     });
-  
+
     // Optionally open the cart drawer (uncomment if needed)
     // setIsCartDrawerOpen(true);
   };
@@ -264,11 +155,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clearCart = () => setCart([]);
 
-  const totalAmount = cart && cart.reduce(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (sum, item: any) => sum + item.price * item.quantity,
-    0
-  );
+  const totalAmount =
+    cart &&
+    cart.reduce(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (sum, item: any) => sum + item.price * item.quantity,
+      0
+    );
 
   const triggerCartDrawerClose = () => {
     setIsCartDrawerOpen(false);
@@ -327,8 +220,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
         isCartDrawerOpen,
         totalAmount,
         totalItems,
-        // isDisabled,
-        // handleButtonClick,
         handleDecrease,
         handleIncrease,
         quantity,

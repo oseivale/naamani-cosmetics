@@ -25,11 +25,9 @@ export default function ProductsPage() {
   };
 
   return (
-    // <CartProvider>
     <PageBanner
       title={"Shop"}
-      backgroundImage="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      // backgroundImage="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      backgroundImage="/images/naamani-shop-bg-img.avif"
     >
       <div style={{ padding: "2rem" }}>
         <h1 className={styles.productsHeader}>Browse our products</h1>
@@ -44,7 +42,5 @@ export default function ProductsPage() {
         </div>
       </div>
     </PageBanner>
-
-    // </CartProvider>
   );
 }

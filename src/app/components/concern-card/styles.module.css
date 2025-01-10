@@ -1,0 +1,38 @@
+.concernCard {
+    height: 15rem;
+    display: flex;
+    background-color: var(--naamani-grey-extra-light);
+    width: 10rem;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: var(--font-nunito);
+    font-size: 1.4rem;
+  }
+  
+  .concernsGrid {
+    max-width: 1100px;
+    margin: 4rem auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+  
+  .concernLabel {
+    background-color: var(--naamani-green);
+    width: 70%;
+    margin: 1.5rem 0;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 3px;
+    color: var(--naamani-purple);
+    transition: all 350ms;
+  }
+
+    
+  .concernCard:hover  .concernLabel{
+    color: var(--naamani-green);
+    background-color: var(--naamani-purple);
+  }

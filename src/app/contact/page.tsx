@@ -10,8 +10,7 @@ export default function Contact() {
     <div>
       <PageBanner
         title={"Contact"}
-        backgroundImage="https://images.unsplash.com/photo-1550758103-d83e024d38ef?q=80&w=3294&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        // backgroundImage="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        backgroundImage={"/images/naamani-shop-bg-img.avif"}
       >
         <div className={styles.contactHeader}>
           <h1>Curious about Naamani Cosmetics?</h1>

@@ -1,6 +1,7 @@
 "use client";
 import { Catamaran, Crimson_Text } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import Navigation from "./components/navigation";
 import Footer from "./components/footer";
 import { CartProvider } from "./contexts/cart";
@@ -28,6 +29,7 @@ export default function RootLayout({
         <CartProvider>
           <Navigation />
           <main style={{ minHeight: "80vh", paddingTop: "5rem" }}>
+          <Toaster position="top-right" reverseOrder={false} />
             {children}
           </main>
         </CartProvider>

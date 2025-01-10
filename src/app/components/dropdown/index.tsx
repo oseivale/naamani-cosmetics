@@ -8,14 +8,6 @@ export default function Dropdown({ options, label, handleScent }: DropdownProps)
   const [selected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // const handleSelect = (value: string) => {
-  //   setSelected(value);
-  //   // handleVariantSelect(value);
-  //   handleScentChange(value)
-  //   setIsOpen(false); // Close the dropdown after selection
-  // };
-
- 
   return (
     <div className={styles.dropdown}>
       <label className={styles.label}>{label}</label>

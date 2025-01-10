@@ -1,58 +1,58 @@
 /* Container for the entire tabs section */
 .tabsContainer {
-    margin-top: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    overflow: hidden;
-  }
-  
-  /* Tab Buttons */
-  .tabButtons {
-    display: flex;
-    border-bottom: 1px solid #ddd;
-    background-color: #f9f9f9;
-  }
-  
+  margin-top: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Tab Buttons */
+.tabButtons {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabButton:hover {
+  background-color: #eee;
+  color: #333;
+}
+
+.activeTab {
+  background-color: var(--naamani-green);
+  color: var(--naamani-purple);
+  font-family: var(--font-nunito);
+  border-bottom: 2px solid var(--naamani-purple); /* Active tab indicator */
+}
+
+/* Tab Content */
+.tabContent {
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
   .tabButton {
-    flex: 1;
-    padding: 1rem;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    color: #555;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 0.8rem;
   }
-  
-  .tabButton:hover {
-    background-color: #eee;
-    color: #333;
-  }
-  
-  .activeTab {
-    background-color: var(--naamani-green);
-    color: var(--naamani-purple);
-    font-family: var(--font-nunito);
-    border-bottom: 2px solid var(--naamani-purple); /* Active tab indicator */
-  }
-  
-  /* Tab Content */
+
   .tabContent {
-    padding: 1.5rem;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
+    padding: 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .tabButton {
-      font-size: 0.9rem;
-      padding: 0.8rem;
-    }
-  
-    .tabContent {
-      padding: 1rem;
-    }
-  }
+}

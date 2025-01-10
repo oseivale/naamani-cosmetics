@@ -24,77 +24,60 @@ export default function HeroBanner() {
   return (
     <div className={styles.hero}>
       <div className={styles.heroContainer}>
-      <div
-        className={`${styles.textSection} ${
-          animateTextSection ? styles.animateFadeIn : ""
-        }`}
-      >
-        <p className={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h1
-          className={`${styles.title} ${
-            animateTitle ? styles.animateTitle : ""
-          }`}
-        >
-          <span>Fresh</span>
-          <span>and</span>
-          <span>Natural</span>
-          <span>Skincare</span>
-          <span>For</span>
-          <span>Best</span>
-          <span>Result</span>
-        </h1>
-        {/* <p>Cruelty Free | Paraben Free | Gluten Free</p> */}
-        <Link
-          href={"/products"}
-          className={`${styles.link} ${
-            animateTitle ? styles.animateTitle : ""
-          }`}
-        >
-          {" "}
-          <span>Shop Now</span>{" "}
-          <span className={styles.arrow}>
-            <Arrow />
-          </span>
-        </Link>
-      </div>
-      
-      <div className={styles.imageSection}>
         <div
-          className={`${styles.leftImage} ${
-            animateImages ? styles.animateSlideUp : ""
+          className={`${styles.textSection} ${
+            animateTextSection ? styles.animateFadeIn : ""
           }`}
         >
-          <Image
-            className={styles.img}
-            src="http://archivo.halodemo.com/wp-content/uploads/2022/06/eco-friendly-zero-waste-face-care-accessories-in-a-linen-reusable-bag-top-view.jpg"
-            alt="Left Skincare Items"
-            height={1000}
-            width={1000}
-          />
-          
-        {/* <img className={styles.img} alt={'#'} src={'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} width={200} /> */}
-
+          <p className={styles.subtitle}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <h1
+            className={`${styles.title} ${
+              animateTitle ? styles.animateTitle : ""
+            }`}
+          >
+            <span>Fresh</span>
+            <span>and</span>
+            <span>Natural</span>
+            <span>Skincare</span>
+            <span>For</span>
+            <span>Best</span>
+            <span>Result</span>
+          </h1>
+          {/* <p>Cruelty Free | Paraben Free | Gluten Free</p> */}
+          <Link
+            href={"/products"}
+            className={`${styles.link} ${
+              animateTitle ? styles.animateTitle : ""
+            }`}
+          >
+            {" "}
+            <span>Shop Now</span>{" "}
+            <span className={styles.arrow}>
+              <Arrow />
+            </span>
+          </Link>
         </div>
-        {/* <div
-          className={`${styles.rightImage} ${
-            animateImages ? styles.animateSlideUp : ""
-          }`}
-        >
-      
-          <Image
-            className={styles.img}
-            src={'https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220'}
-            // src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Left Skincare Items"
-            height={1000}
-            width={1000}
-          />
 
-        </div> */}
-        
+        <div className={styles.imageSection}>
+          <div
+            className={`${styles.leftImage} ${
+              animateImages ? styles.animateSlideUp : ""
+            }`}
+          >
+            <Image
+              className={styles.img}
+              src={
+                "/images/eco-friendly-zero-waste-face-care-accessories-in-a-linen-reusable-bag-top-view.jpg"
+              }
+              alt="Left Skincare Items"
+              height={1000}
+              width={1000}
+            />
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 }

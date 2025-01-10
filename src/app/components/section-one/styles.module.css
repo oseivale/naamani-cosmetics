@@ -1,14 +1,7 @@
 .container {
-  /* background-color: #ebedef; */
-  /* background-color: var(--naamani-purple); */
-  /* background-color: rgb(197, 180, 230);   */
   background-color: var(--naamani-grey-extra-light);
-  /* background-image: linear-gradient(to bottom, rgba(197, 180, 230, 0.8), rgba(197, 180, 230, 0.8)), url('../../../../public/naamani-floral-bg-purple.jpg'); */
   background-size: cover;
-  /* height: 30vh; */
-  /* max-width: 1100px; */
   margin: 0 auto;
-  /* border-radius: 8px; */
 }
 
 .contentWrapper {
@@ -19,33 +12,20 @@
 }
 
 .right {
-    background-color: var(--naamani-caramel);
+  background-color: var(--naamani-caramel);
 }
 
 .left {
-    background-color: var(--naamani-coffee);
+  background-color: var(--naamani-coffee);
 }
-
-.textContent{
-  /* padding: 1rem; */
-}
-
-.contentWrapper div {
-  /* min-width: 40%; */
-  /* padding: 1rem; */
-  /* max-width: 40%; */
-}
-
 
 /* Section Wrapper */
 .sectionWrapper {
-  /* padding: 4rem 2rem; */
   background-color: #fff;
 }
 
 /* Main Container */
 .container {
-  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -54,8 +34,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap; */
-  /* gap: 2rem; */
 }
 
 /* Heading */
@@ -63,8 +41,8 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--naamani-coffee); /* Similar to the color theme in the screenshots */
-  margin-bottom: .5rem;
+  color: var(--naamani-coffee);
+  margin-bottom: 0.5rem;
   line-height: 1.4;
 }
 
@@ -75,7 +53,7 @@
   color: var(--naamani-coffee);
   line-height: 1.8;
   margin-bottom: 2rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 /* Features List */
@@ -101,7 +79,7 @@
 
 /* Checkmark Icon for Features */
 .featureList li::before {
-  content: '✔';
+  content: "✔";
   color: var(--naamani-coffee);
   position: absolute;
   left: 0;
@@ -146,7 +124,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: left;
-  margin-top: -2rem; /* Slight overlap effect with image */
+  margin-top: -2rem;
   position: relative;
   z-index: 1;
   right: 80px;
@@ -192,7 +170,6 @@
 }
 
 .highlightCard {
-  /* border: 1px solid var(--naamani-purple); */
   display: flex;
   flex-direction: column;
   background-color: var(--naamani-green);
@@ -224,12 +201,12 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .featureList li {
     font-size: 1.1rem;
   }
 
-  .featureList  {
+  .featureList {
     margin: 0;
   }
 
@@ -250,11 +227,6 @@
     width: 250px;
     left: 0;
   }
-
-  /* .image {
-    height: 350px;
-    width: auto;
-  } */
 
   .heading {
     font-size: 2rem;

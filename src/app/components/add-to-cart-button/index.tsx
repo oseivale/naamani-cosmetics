@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
 import { AddToCartButtonProps, Variant } from "@/app/types/add-to-cart-button";
 import { Confirm } from "@/app/icons/confirm";
+import toast from "react-hot-toast";
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart, quantity, handleQuantityChange } = useCart();
@@ -45,22 +46,47 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       setIsOpen(false);
     }
   };
+  // const handleAddToCart = () => {
+  //   const variant = getSelectedVariant();
+
+  //   if (!variant && hasMultipleVariants) {
+  //     console.error("Variant not selected or not found!");
+  //     return;
+  //   }
+
+  //   addToCart(
+  //     product,
+  //     variant ? variant.id : null, // Pass variant ID if available, or null if no variants
+  //     quantity,
+  //     selectedScent
+  //   );
+  // };
+
   const handleAddToCart = () => {
     const variant = getSelectedVariant();
-
+  
+    // Check if the product has multiple variants and a variant is not selected
     if (!variant && hasMultipleVariants) {
-      console.error("Variant not selected or not found!");
+      toast.error("Please select a size before adding to the cart.");
       return;
     }
-
+  
+    // Check if the product has scents and a scent is not selected
+    if (product.scents && product.scents.length > 0 && !selectedScent) {
+      toast.error("Please select a scent before adding to the cart.");
+      return;
+    }
+  
+    // Add to cart
     addToCart(
       product,
       variant ? variant.id : null, // Pass variant ID if available, or null if no variants
       quantity,
       selectedScent
     );
+  
+    toast.success("Product added to cart!");
   };
-
   // Attach and clean up the event listener for outside clicks
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

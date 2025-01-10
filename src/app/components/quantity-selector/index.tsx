@@ -9,23 +9,7 @@ import { QuantitySelectorProps } from "@/app/types/quantity-selector";
 export default function QuantitySelector({
   quantityTest,
 }: QuantitySelectorProps) {
-  //   const [quantity, setQuantity] = useState(initialQuantity);
-
   const { handleIncrease, handleDecrease } = useCart();
-
-  //   const handleIncrease = () => {
-  //     const newQuantity = quantity + 1;
-  //     setQuantity(newQuantity);
-  //     onQuantityChange(newQuantity);
-  //   };
-
-  //   const handleDecrease = () => {
-  //     if (quantity > 1) {
-  //       const newQuantity = quantity - 1;
-  //       setQuantity(newQuantity);
-  //       onQuantityChange(newQuantity);
-  //     }
-  //   };
 
   return (
     <div className={styles.quantity}>

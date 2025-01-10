@@ -73,8 +73,7 @@ export default function About() {
       <PageBanner
         title={"About"}
         customBGStyles={{bgPosition: 'center 75%'}}
-        backgroundImage="https://images.unsplash.com/photo-1559881230-1af605ca3f67?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        // backgroundImage="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        backgroundImage={"/images/maddi-bazzocco-UKGGgWb6_0g-unsplash.jpg"}
       >
         <div className={styles.headerContainer}>
           <h1 className={styles.mainHeader}>Our Belief</h1>

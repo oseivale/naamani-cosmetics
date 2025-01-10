@@ -69,42 +69,10 @@ export default async function ProductPage({
           {/* <p className={styles.productAvailability}>
             Availability: {product.availability} in stock
           </p> */}
-          {/* <div className={styles.quantity}>
-            <button className={styles.quantityBtn}>
-              <Minus />
-            </button>
-            <input className={styles.quantityInput} defaultValue={1} />
-            <button className={styles.quantityBtn}>
-              <Add />
-            </button>
-          </div> */}
-
-          {/* {product?.scents && (
-            <div>
-              <Dropdown options={product?.scents} label="Select Scent" />
-            </div>
-          )} */}
-
-          {/* <p>Select your Scent</p> */}
-          {/* <div>
-            {product?.scents?.map((scent) => {
-              return <button className={styles.variant}>{scent}</button>;
-            })}
-          </div> */}
 
           <div className={styles.addToCart}>
-            <AddToCartButton
-              // id={product.id}
-              // name={product.name}
-              // price={product.basePrice}
-              // image={product.images[0]}
-              product={product}
-            />
-            {/* <div className={styles.addToCartButtonContainer}>
-              <button className={styles.addToCartButton}><CartAdd />Add to Cart</button>
-            </div> */}
+            <AddToCartButton product={product} />
           </div>
-          {/* <p className={styles.productType}>{product.description}</p> */}
           <Accordion
             items={[
               {
@@ -134,11 +102,11 @@ export default async function ProductPage({
                   </div>
                 ),
               },
-              // {
-              //   title: "Shipping & Returns",
-              //   content:
-              //     "Free shipping on orders over $50. Easy returns within 30 days of purchase. See our return policy for more details.",
-              // },
+              {
+                title: "Shipping & Returns",
+                content:
+                  "Free shipping on orders over $50. Easy returns within 30 days of purchase. See our return policy for more details.",
+              },
             ]}
           />
           <div className={styles.askButton}>

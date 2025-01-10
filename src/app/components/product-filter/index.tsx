@@ -93,10 +93,12 @@ export default function ProductFilter({
           <div>
             <h2>Other Helpful Resources</h2>
             <span className={styles.glossaryWrapper}>
-           
-            <Link className={styles.glossary} href={"/ingredient-glossary"}> <Info />Ingredient Glossary</Link>
+              <Link className={styles.glossary} href={"/ingredient-glossary"}>
+                {" "}
+                <Info />
+                Ingredient Glossary
+              </Link>
             </span>
-            
           </div>
         </div>
       )}

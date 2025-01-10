@@ -1,9 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { TabsProps } from "@/app/types/tabs";
-
 
 export default function Tabs({ tabs }: TabsProps) {
   const [activeTab, setActiveTab] = useState(0); // Default to the first tab
@@ -26,9 +25,7 @@ export default function Tabs({ tabs }: TabsProps) {
       </div>
 
       {/* Tab Content */}
-      <div className={styles.tabContent}>
-        {tabs[activeTab]?.content}
-      </div>
+      <div className={styles.tabContent}>{tabs[activeTab]?.content}</div>
     </div>
   );
 }
