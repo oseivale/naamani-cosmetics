@@ -89,7 +89,7 @@
 
 .mainImage img {
   height: 500px;
-  width: auto;
+  /* width: auto; */
   border-radius: 8px;
   width: 100%;
 }
