@@ -25,10 +25,11 @@
 
 .dropdown {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  text-transform: capitalize;
 }
 
 .checkboxGroup {
@@ -36,6 +37,27 @@
   flex-direction: column;
   gap: 0.5rem;
   min-width: 12rem;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+.otherResources{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  /* text-align: center; */
+}
+
+.otherResources h2 {
+  margin: 0;
 }
 
 .checkboxLabel {

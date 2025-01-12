@@ -32,18 +32,30 @@ export default function ProductFilter({
     <div className={styles.filter}>
       {isMobile ? (
         // Dropdown for mobile
-        <select
-          value={selectedCategory}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className={styles.dropdown}
-        >
-          <option value="All">All Products</option>
-          {categories.map((category, index) => (
-            <option key={index} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+        <div className={styles.mobileDropdown}>
+          <select
+            value={selectedCategory}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className={styles.dropdown}
+          >
+            <option value="All">All Products</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <div className={styles.otherResources}>
+            <h2>Other Helpful Resources</h2>
+            <span className={styles.glossaryWrapper}>
+              <Link className={styles.glossary} href={"/ingredient-glossary"}>
+                {" "}
+                <Info />
+                Ingredient Glossary
+              </Link>
+            </span>
+          </div>
+        </div>
       ) : (
         // Checkboxes for desktop
         <div className={styles.checkboxGroup}>
