@@ -1,7 +1,6 @@
 // pages/404.tsx
 import Link from "next/link";
 import styles from "./page.module.css";
-import { NotFound } from "./icons/not-found";
 
 const Custom404 = () => {
   return (
