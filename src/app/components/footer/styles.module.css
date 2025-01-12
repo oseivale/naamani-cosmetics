@@ -63,7 +63,8 @@
 }
 
 .linksSection ul li a:hover {
-  color: #000;
+  color: var(--naamani-green);
+  text-decoration: underline;
 }
 
 /* Social Media Section */

@@ -108,6 +108,58 @@ a.secondary {
   flex-shrink: 0;
 }
 
+/* 404 page */
+/* pages/404.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  background-size: cover;
+  background-image: url("../../public/images/naamani-floral-bg-white.png");
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: var(--naamani-purple);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--naamani-purple);
+  margin: 1rem 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--naamani-green);
+  color: var(--naamani-purple);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.homeLink:hover {
+  background-color: var(--naamani-purple);
+  color: var(--naamani-white);
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
