@@ -35,6 +35,16 @@
     margin: 0;
 }
 
+.emailLink {
+    text-decoration: none;
+    color: var(--naamani-black);
+    transition: all 350ms;
+}
+
+.emailLink:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .contact {
         grid-template-columns: 1fr;

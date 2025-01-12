@@ -71,6 +71,7 @@
 
 .featureList li {
   font-size: 1.1rem;
+  background-color: var(--naamani-coffee);
   color: var(--naamani-coffee);
   position: relative;
   margin-bottom: 1rem;

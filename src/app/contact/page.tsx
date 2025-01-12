@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ContactForm from "../components/form";
 import PageBanner from "../components/page-wrapper";
 import { Email } from "../icons/email";
@@ -45,7 +46,7 @@ export default function Contact() {
               </div>
               <div>
                 <h2>Send us an email</h2>
-                <p>damankconsulting@yahoo.ca</p>
+                <Link className={styles.emailLink} href={"mailto:damankconsulting@yahoo.ca"}>damankconsulting@yahoo.ca</Link>
               </div>
             </div>
           </div>

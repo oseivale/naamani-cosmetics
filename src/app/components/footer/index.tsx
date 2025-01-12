@@ -20,7 +20,7 @@ export default function Footer() {
               <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="/shop">Shop</Link>
+              <Link href="/products">Shop</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
@@ -39,7 +39,7 @@ export default function Footer() {
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/naamani.cosmetics/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
             >

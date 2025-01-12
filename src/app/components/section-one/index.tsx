@@ -1,3 +1,4 @@
+import { CheckMark } from "@/app/icons/checkmark";
 import styles from "./styles.module.css";
 
 export default function SectionOne() {
