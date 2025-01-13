@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.cartContainer h1{
+    font-size: 2.5rem;
+    color: var(--naamani-font-dark);
+}
+
 .emptyCartText {
   height: 30vh;
   display: flex;
@@ -14,6 +19,50 @@
 .emptyCartText p {
   margin: 0;
   font-size: 2rem;
+}
+
+.checkoutBtnWrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.backToShopBtn {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  /* max-width: 10rem; */
+  background-color: var(--naamani-purple);
+  text-decoration: none;
+  color: var(--naamani-white);
+  border: none;
+  padding: 0.65rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  font-family: var(--font-nunito);
+  transition: all 450ms;
+  justify-content: center;
+  text-align: center;
+}
+
+.backToShopBtn:hover {
+  color: var(--naamani-purple);
+  background-color: var(--naamani-green);
+}
+
+.breadcrumb {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--naamani-purple);
+}
+
+.breadcrumb a:hover {
+  color: var(--naamani-coffee);
 }
 
 .backToProducts {
@@ -53,7 +102,7 @@
 }
 
 .removeBtn svg:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .variantWrapper {
@@ -86,6 +135,7 @@
 }
 
 .clearCartBtn,
+.backToShopBtn,
 .proceedToCheckoutBtn {
   border: none;
   padding: 0.65rem 1rem;
@@ -93,6 +143,7 @@
   border-radius: 5px;
   font-family: var(--font-nunito);
   transition: all 450ms;
+  
 }
 
 .clearCartBtn:hover,
@@ -101,9 +152,12 @@
 }
 
 .proceedToCheckoutBtn {
+/* display: flex; */
+text-align: center;
   color: var(--naamani-white);
   background-color: var(--naamani-purple);
   text-decoration: none;
+  justify-content: center;
 }
 
 .proceedToCheckoutBtn:hover {
@@ -165,6 +219,12 @@
 }
 
 @media (max-width: 768px) {
+  .checkoutBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .cartItems {
     display: flex;
     flex-direction: column;

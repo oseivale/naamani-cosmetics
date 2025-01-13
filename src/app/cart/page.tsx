@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Minus } from "../icons/minus";
 import { Add } from "../icons/add";
 import Image from "next/image";
+import { CartAdd } from "../icons/cart-add";
 
 export default function CartPage() {
   const {
@@ -28,7 +29,7 @@ export default function CartPage() {
     );
   }
 
-  console.log('cart', cart)
+  console.log("cart", cart);
   return (
     <div>
       <div className={styles.cartContainer} style={{ padding: "2rem" }}>
@@ -101,16 +102,18 @@ export default function CartPage() {
         <p className={styles.shippingDetails}>
           Shipping will be calculated at checkout.
         </p>
-        <button className={styles.clearCartBtn} onClick={clearCart}>
-          Clear Cart
-        </button>
-        <Link
-          href={"/checkout"}
-          className={styles.proceedToCheckoutBtn}
-          style={{ marginLeft: "1rem" }}
-        >
-          Proceed to Checkout
-        </Link>
+        <div className={styles.checkoutBtnWrapper}>
+          <button className={styles.clearCartBtn} onClick={clearCart}>
+            Clear Cart
+          </button>
+
+          <Link href={"/products"} className={styles.backToShopBtn}>
+            Back to Shop <CartAdd />
+          </Link>
+          <Link href={"/checkout"} className={styles.proceedToCheckoutBtn}>
+            Proceed to Checkout
+          </Link>
+        </div>
       </div>
     </div>
   );
