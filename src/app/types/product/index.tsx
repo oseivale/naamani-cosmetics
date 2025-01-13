@@ -1,4 +1,4 @@
-import { Size, Variant } from "../add-to-cart-button";
+import { Variant } from "../add-to-cart-button";
 
 export interface ProductInfo {
   id: string; // Unique identifier for the product

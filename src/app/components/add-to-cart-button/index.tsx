@@ -5,7 +5,7 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
-import { AddToCartButtonProps, Size, Variant } from "@/app/types/add-to-cart-button";
+import { AddToCartButtonProps, Size } from "@/app/types/add-to-cart-button";
 import { Confirm } from "@/app/icons/confirm";
 import toast from "react-hot-toast";
 
@@ -54,33 +54,6 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   );
   const [selectedScent, setSelectedScent] = useState<string | null>(null);
 
-  // Automatically handle cases where there are no variants or a single variant
-  const getselectedSize = () => {
-    if (isSingleVariant) {
-      return product.variants?.[0];
-    }
-  
-    // Match the selected size and scent with the available variants
-    if (selectedSize && selectedScent) {
-      return product.variants?.find(
-        (variant) =>
-          variant.size === selectedSize.size && variant.scent === selectedScent
-      );
-    }
-  
-    // Fallback to the manually selected variant (if applicable)
-    return selectedSize;
-  };
-  // const allVariants = generateVariantPermutations(product);
-
-  // const getselectedSize = () => {
-  //   return allVariants.find(
-  //     (variant) =>
-  //       variant.size === selectedSize?.size &&
-  //       (!product.scents || variant.scent === selectedScent)
-  //   );
-  // };
-
   // Handle selecting a scent
   const handleScentSelect = (scent: string) => {
     console.log("scentttt", scent);
@@ -113,7 +86,6 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   // };
 
   const handleAddToCart = () => {
-    const variant = getselectedSize();
     console.log("--from add to cart---", selectedSize);
     // Check if the product has multiple variants and a variant is not selected
     if (!selectedSize && hasMultipleVariants) {
