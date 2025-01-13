@@ -5,11 +5,39 @@ import { useCart } from "@/app/contexts/cart";
 import { CartAdd } from "@/app/icons/cart-add";
 import styles from "./styles.module.css";
 import QuantitySelector from "../quantity-selector";
-import { AddToCartButtonProps, Variant } from "@/app/types/add-to-cart-button";
+import { AddToCartButtonProps, Size, Variant } from "@/app/types/add-to-cart-button";
 import { Confirm } from "@/app/icons/confirm";
 import toast from "react-hot-toast";
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
+  // Generate all variant permutations
+  // function generateVariantPermutations(product: AddToCartButtonProps) {
+  //   console.log('product', product)
+  //   const { scents, variants } = product;
+
+  //   if (!scents || scents.length === 0) {
+  //     return variants.map((variant) => ({
+  //       id: variant.id,
+  //       size: variant.size,
+  //       scent: null,
+  //       price: variant.price,
+  //     }));
+  //   }
+
+  //   const permutations = [];
+  //   scents.forEach((scent) => {
+  //     variants.forEach((variant) => {
+  //       permutations.push({
+  //         id: `${variant.id}-${scent.replace(/\s+/g, "-").toLowerCase()}`,
+  //         size: variant.size,
+  //         scent,
+  //         price: variant.price,
+  //       });
+  //     });
+  //   });
+  //   return permutations;
+  // }
+
   const { addToCart, quantity, handleQuantityChange } = useCart();
 
   const hasMultipleVariants = product?.variants?.length
@@ -21,19 +49,41 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const [selectedVariant, setSelectedVariant] = useState<Variant | null>(
+  const [selectedSize, setSelectedSize] = useState<Size | null>(
     isSingleVariant ? product.variants?.[0] || null : null
   );
   const [selectedScent, setSelectedScent] = useState<string | null>(null);
 
   // Automatically handle cases where there are no variants or a single variant
-  const getSelectedVariant = () => {
-    if (isSingleVariant) return product.variants?.[0];
-    return selectedVariant;
+  const getselectedSize = () => {
+    if (isSingleVariant) {
+      return product.variants?.[0];
+    }
+  
+    // Match the selected size and scent with the available variants
+    if (selectedSize && selectedScent) {
+      return product.variants?.find(
+        (variant) =>
+          variant.size === selectedSize.size && variant.scent === selectedScent
+      );
+    }
+  
+    // Fallback to the manually selected variant (if applicable)
+    return selectedSize;
   };
+  // const allVariants = generateVariantPermutations(product);
+
+  // const getselectedSize = () => {
+  //   return allVariants.find(
+  //     (variant) =>
+  //       variant.size === selectedSize?.size &&
+  //       (!product.scents || variant.scent === selectedScent)
+  //   );
+  // };
 
   // Handle selecting a scent
   const handleScentSelect = (scent: string) => {
+    console.log("scentttt", scent);
     setSelectedScent(scent);
     setIsOpen(false); // Close the dropdown after selection
   };
@@ -47,7 +97,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     }
   };
   // const handleAddToCart = () => {
-  //   const variant = getSelectedVariant();
+  //   const variant = getselectedSize();
 
   //   if (!variant && hasMultipleVariants) {
   //     console.error("Variant not selected or not found!");
@@ -63,28 +113,29 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   // };
 
   const handleAddToCart = () => {
-    const variant = getSelectedVariant();
-  
+    const variant = getselectedSize();
+    console.log("--from add to cart---", selectedSize);
     // Check if the product has multiple variants and a variant is not selected
-    if (!variant && hasMultipleVariants) {
+    if (!selectedSize && hasMultipleVariants) {
       toast.error("Please select a size before adding to the cart.");
       return;
     }
-  
+
     // Check if the product has scents and a scent is not selected
     if (product.scents && product.scents.length > 0 && !selectedScent) {
       toast.error("Please select a scent before adding to the cart.");
       return;
     }
-  
+
     // Add to cart
     addToCart(
       product,
-      variant ? variant.id : null, // Pass variant ID if available, or null if no variants
-      quantity,
-      selectedScent
+      selectedSize ? selectedSize : null, // Pass variant ID if available, or null if no variants
+      selectedScent ? selectedScent : null,
+      quantity
+      // selectedScent
     );
-  
+
     toast.success("Product added to cart!");
   };
   // Attach and clean up the event listener for outside clicks
@@ -95,6 +146,9 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     };
   }, []);
 
+  console.log("product---page", product);
+  console.log("selectedSize", selectedSize);
+
   return (
     <>
       {/* Size Selector */}
@@ -102,19 +156,19 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
         <div className={styles.sizeSelector}>
           <p>Select Size:</p>
           <div className={styles.sizeSelectorButtonWrapper}>
-            {product.variants?.map((variant) => (
+            {product.sizes?.map((size) => (
               <button
-                key={variant.id}
-                onClick={() => setSelectedVariant(variant)}
+                key={size.size}
+                onClick={() => setSelectedSize(size)}
                 className={
-                  selectedVariant?.id === variant.id
+                  selectedSize?.size === size.size
                     ? styles.selectedButton
                     : styles.button
                 }
               >
                 <div
                   className={
-                    selectedVariant?.id === variant.id
+                    selectedSize?.size === size.size
                       ? styles.selectedCheck
                       : styles.unselectedCheck
                   }
@@ -124,8 +178,8 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
                 </div>
 
                 <span className={styles.variantText}>
-                  <span className={styles.variantPrice}>${variant.price}</span>
-                  <span className={styles.variantSize}>{variant.size}</span>
+                  <span className={styles.variantPrice}>${size.price}</span>
+                  <span className={styles.variantSize}>{size.size}</span>
                 </span>
               </button>
             ))}
@@ -188,7 +242,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       {/* Add to Cart Button */}
       <button
         // disabled={
-        //   (hasMultipleVariants && !selectedVariant) || // Disable if variant not selected when required
+        //   (hasMultipleVariants && !selectedSize) || // Disable if variant not selected when required
         //   (product.scents && product.scents.length > 0 && !selectedScent) // Disable if scent not selected when required
         // }
         className={styles.addToCartButton}
@@ -234,7 +288,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
 //   ],
 // };
 
-// const selectedVariantId = "db5c3c3a-2db0-49f5-b1b2-a6ef335c963d"; // 2oz size
+// const selectedSizeId = "db5c3c3a-2db0-49f5-b1b2-a6ef335c963d"; // 2oz size
 // const selectedScent = "Lavender Vanilla"; // Selected scent
 // const quantity = 2; // Adding 2 of this product to the cart
 

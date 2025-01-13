@@ -27,6 +27,7 @@ export const products = [
     scents: null,
     variants: [
       {
+        scent: null,
         id: "d8cc5c11-77d4-4e55-b931-fa4961778f7e",
         size: "30ml",
         price: 15,
@@ -68,15 +69,48 @@ export const products = [
         before use. Not for internal use. Test on a small area of skin for skin sensitivity or
         allergies.`,
     scents: ["Lavender Vanilla", "Lemon Verbena", "Unscented"],
-    variants: [
+    sizes: [
       {
-        id: "db5c3c3a-2db0-49f5-b1b2-a6ef335c963d",
         size: "2oz",
         price: 8,
       },
+      { size: "8oz", price: 25 },
+    ],
+    variants: [
       {
-        id: "d8cc5c11-77d4-4e55-b951-fa4961778b7e",
+        id: "843109683205",
+        size: "2oz",
+        scent: "Lavender Vanilla",
+        price: 8,
+      },
+      {
+        id: "246529971852",
         size: "8oz",
+        scent: "Lavender Vanilla",
+        price: 25,
+      },
+      {
+        id: "113266595655",
+        size: "2oz",
+        scent: "Lemon Verbena",
+        price: 8,
+      },
+      {
+        id: "250777523489",
+        size: "8oz",
+        scent: "Lemon Verbena",
+        price: 25,
+      },
+      {
+        id: "329393260232",
+        size: "2oz",
+        scent: "Unscented",
+        price: 8,
+      },
+      {
+        id: "343436592625",
+        size: "8oz",
+        scent: "Unscented",
         price: 25,
       },
     ],
@@ -87,6 +121,7 @@ export const products = [
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
     ],
   },
+
   {
     id: "3",
     name: "Face Oil",
@@ -117,9 +152,10 @@ export const products = [
         contact with eyes. If pregnant or lactating, consult your health care practitioner
         before use. Not for internal use. Test on a small area of skin for skin sensitivity or
         allergies`,
-    scents: null,
+    scents: [],
     variants: [
       {
+        scent: null,
         id: "6deaae11-b964-43cc-9bad-ae8dc7e4746f",
         size: "30ml",
         price: 25,
@@ -161,6 +197,7 @@ export const products = [
     scents: null,
     variants: [
       {
+        scent: null,
         id: "7566aa3d-b755-4f3f-a6d4-7e77db8ffbc8",
         size: "2oz",
         price: 37,
@@ -204,6 +241,7 @@ export const products = [
     scents: null,
     variants: [
       {
+        scent: null,
         id: "583767f3-fe38-47f9-8ff0-1f6e3bc77fa4",
         size: "2oz",
         price: 37,
@@ -247,7 +285,8 @@ export const products = [
     scents: null,
     variants: [
       {
-        id: "150ca785-8095-4d1a-834e-2799d216de6f",
+        scent: null,
+        id: "150ca785-8095-4d1a-834e-2799d217af5f",
         size: "2oz",
         price: 37,
       },
@@ -280,6 +319,7 @@ export const products = [
     scents: null,
     variants: [
       {
+        scent: null,
         id: "150ca785-8095-4d1a-834e-2799d216de6f",
         size: "30ml",
         price: 25,
@@ -293,3 +333,90 @@ export const products = [
     ],
   },
 ];
+
+/*
+
+  example updated object:
+
+
+   {
+    id: "2",
+    name: "Body Butter",
+    price: 25.0,
+    // price: '8-25',
+    availability: 80,
+    featured: true,
+    category: "body",
+    categories: ["Body"],
+    description: `We formulate our body butter with natural and organic products.
+        We manufacture all our products in small batches at a time to ensure we maintain
+        freshness. This rich, velvety blend of cocoa butter with Tahitian Vanilla Fragrance
+        Oil transforms from an Indulgent cream to oil when massaged into the skin. The
+        unique blend of plant- based products is loaded with vitamins, antioxidants and
+        essential fatty acids to help protect your skin and keep it hydrated all day long.
+        Relax your senses and enjoy the power of potent plant ingredients.`,
+    ingredients: `Aqua, Aloe Barbadensis (Aloe Vera) Leaf Juice, *Butyrospermum
+        Parkii (Shea Butter), *Caprylic/Capric Triglyceride, *Simmondsia Chinensis (Jojoba)
+        Seed Oil, *Theobroma Cacao (Cocoa Butter) Seed Oil, Mangifera Indica (Mango)
+        Seed Butter, *Persea Gratissima (Avocado) Oil, Cetearyl Alcohol (and) Polysorbate
+        60, Glycerin, Cetyl Alcohol, Gluconolactone (and) Sodium Benzoate, Fragrance
+        (Tahitian Vanilla Fragrance Oil), Rosmarinus officinalis (Rosemary) Oil`,
+    directions: `Apply directly to skin after shower. |Massage liberally to allow
+        absorption into skin. *Can use all over body including hands.`,
+    caution: `Contains essential oils or fragrance. Keep out of reach of children. Avoid
+        contact with eyes. If pregnant or lactating, consult your health care practitioner
+        before use. Not for internal use. Test on a small area of skin for skin sensitivity or
+        allergies.`,
+    scents: ["Lavender Vanilla", "Lemon Verbena", "Unscented"],
+    sizes: ["2oz", "8oz"]
+    variants: [
+        {
+          "id": "843109683205",
+          "size": "2oz",
+          "scent": "Lavender Vanilla",
+          "price": 8
+        },
+        {
+          "id": "246529971852",
+          "size": "8oz",
+          "scent": "Lavender Vanilla",
+          "price": 25
+        },
+        {
+          "id": "113266595655",
+          "size": "2oz",
+          "scent": "Lemon Verbena",
+          "price": 8
+        },
+        {
+          "id": "250777523489",
+          "size": "8oz",
+          "scent": "Lemon Verbena",
+          "price": 25
+        },
+        {
+          "id": "329393260232",
+          "size": "2oz",
+          "scent": "Unscented",
+          "price": 8
+        },
+        {
+          "id": "343436592625",
+          "size": "8oz",
+          "scent": "Unscented",
+          "price": 25
+        }
+    ]
+    variantHeading: `Choose Your Scent`,
+    images: [
+      "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
+      "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
+      "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
+    ],
+  },
+
+*/
+
+// We will use the inputs of the user to filter out the correct product variant that matches the user's inputs
+// The that matched variant will be the the unique product that we use for the remaining logic
+// Existing product should be matched based on thbis id as well to consolidate the cart totals

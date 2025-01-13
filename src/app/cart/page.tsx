@@ -28,6 +28,7 @@ export default function CartPage() {
     );
   }
 
+  console.log('cart', cart)
   return (
     <div>
       <div className={styles.cartContainer} style={{ padding: "2rem" }}>

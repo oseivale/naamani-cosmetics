@@ -7,7 +7,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { ProductItem } from "../types/add-to-cart-button";
+import { ProductItem, Size } from "../types/add-to-cart-button";
 
 interface CartItem {
   id: string;
@@ -17,13 +17,14 @@ interface CartItem {
   price: number | string;
   quantity: number;
   image: string;
+  variantId?: string;
 }
 
 type AddToCart = (
   product: ProductItem,
-  selectedVariantId: string | null,
-  quantity?: number,
-  selectedScent?: string | null
+  selectedSize: Size | null,
+  selectedScent: string | null,
+  quantity: number
 ) => void;
 
 type CartContextType = {
@@ -91,58 +92,197 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+
+  // const addToCart: AddToCart = (
+  //   product,
+  //   selectedVariantId: string | null,
+  //   quantity: number = 1,
+  //   selectedScent: string | null = null
+  // ) => {
+  //   console.log('---product---', product)
+  //   console.log('---selectedVariantId---', selectedVariantId)
+    
+
+  //   const selectedVariant = product?.variants?.find(
+  //     (variant) => variant.id === selectedVariantId
+  //   );
+
+  //   // const selectedVariant = product?.variants?.find(
+  //   //   (variant) =>{ 
+  //   //     console.log('-----hiii', `${variant.id}-${selectedScent?.replace(/\s+/g, "-").toLowerCase()}`)
+  //   //     return `${variant.id}-${selectedScent?.replace(/\s+/g, "-").toLowerCase().trim()}` === selectedVariantId
+  //   // }
+  //   // );
+
+  //   // if (!selectedVariant) {
+  //   //   console.error("Selected variant not found!");
+  //   //   return;
+  //   // }
+
+  //   if (!selectedVariant) {
+  //     console.error("Selected variant not found!");
+  //     return;
+  //   }
+
+  //   setCart((prevCart) => {
+  //     // Check if the same variant and scent already exist in the cart
+  //     const existingItem = prevCart.find(
+  //       (item) =>
+  //         item.id === product.id &&
+  //         item.size === selectedVariant.size &&
+  //         item.scent === selectedScent
+  //     );
+
+  //     if (existingItem) {
+  //       // Update the quantity if the item already exists
+  //       return prevCart.map((item) =>
+  //         item.id === product.id &&
+  //         item.size === selectedVariant.size &&
+  //         item.scent === selectedScent
+  //           ? { ...item, quantity: item.quantity + quantity }
+  //           : item
+  //       );
+  //     }
+
+  //     // Add a new item if it doesn't exist
+  //     const newItem: CartItem = {
+  //       id: selectedVariant?.id ? selectedVariant?.id : product.id,
+  //       name: product.name,
+  //       size: selectedVariant.size,
+  //       scent: selectedScent,
+  //       price: selectedVariant.price,
+  //       quantity: quantity,
+  //       image: product.images ? product.images[0] : "",
+  //       variantId: selectedVariant.id || ''
+  //     };
+
+  //     return [...prevCart, newItem];
+  //   });
+
+  //   // Optionally open the cart drawer (uncomment if needed)
+  //   // setIsCartDrawerOpen(true);
+  // };
+  
+  /*
   const addToCart: AddToCart = (
-    product,
-    selectedVariantId: string | null,
-    quantity: number = 1,
-    selectedScent: string | null = null
-  ) => {
-    const selectedVariant = product?.variants?.find(
-      (variant) => variant.id === selectedVariantId
+  product,
+  selectedSize: string | null, // Pass the selected size
+  selectedScent: string | null, // Pass the selected scent
+  quantity: number = 1
+) => {
+  console.log("---product---", product);
+  console.log("---selectedSize---", selectedSize);
+  console.log("---selectedScent---", selectedScent);
+
+  // Find the matching variant based on selected size and scent
+  const selectedVariant = product?.variants?.find(
+    (variant) =>
+      variant.size === selectedSize && variant.scent === selectedScent
+  );
+
+  if (!selectedVariant) {
+    console.error("Selected variant not found! Ensure size and scent are selected.");
+    return;
+  }
+
+  setCart((prevCart) => {
+    // Check if the same variant and scent already exist in the cart
+    const existingItem = prevCart.find(
+      (item) =>
+        item.id === product.id &&
+        item.size === selectedVariant.size &&
+        item.scent === selectedScent
     );
 
-    if (!selectedVariant) {
-      console.error("Selected variant not found!");
-      return;
+    if (existingItem) {
+      // Update the quantity if the item already exists
+      return prevCart.map((item) =>
+        item.id === product.id &&
+        item.size === selectedVariant.size &&
+        item.scent === selectedScent
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
+      );
     }
 
-    setCart((prevCart) => {
-      // Check if the same variant and scent already exist in the cart
-      const existingItem = prevCart.find(
-        (item) =>
-          item.id === product.id &&
-          item.size === selectedVariant.size &&
-          item.scent === selectedScent
+    // Add a new item if it doesn't exist
+    const newItem: CartItem = {
+      id: selectedVariant.id, // Use the variant ID for unique identification
+      name: product.name,
+      size: selectedVariant.size,
+      scent: selectedScent,
+      price: selectedVariant.price,
+      quantity: quantity,
+      image: product.images ? product.images[0] : "",
+      variantId: selectedVariant.id, // Variant ID for further processing
+    };
+
+    return [...prevCart, newItem];
+  });
+
+  // Optionally open the cart drawer (uncomment if needed)
+  // setIsCartDrawerOpen(true);
+};
+  
+  */
+
+const addToCart: AddToCart = (
+  product,
+  selectedSize: Size | null, // Pass the selected size
+  selectedScent: string | null, // Pass the selected scent
+  quantity: number = 1
+) => {
+  console.log("---product---", product);
+  console.log("---selectedSize---", selectedSize);
+  console.log("---selectedScent---", selectedScent);
+
+  // Find the matching variant based on selected size and scent
+  const selectedVariant = product?.variants?.find(
+    (variant) =>{
+      console.log('variant from selected variant function', variant)
+     return variant.size === selectedSize?.size && variant.scent === selectedScent
+    }
+  );
+
+  if (!selectedVariant) {
+    console.error("Selected variant not found! Ensure size and scent are selected.");
+    return;
+  }
+
+  setCart((prevCart) => {
+    // Check if an item with the same ID exists in the cart
+    const existingItem = prevCart.find(
+      (item) => item.id === selectedVariant.id
+    );
+
+    if (existingItem) {
+      // Update the quantity of the existing item
+      return prevCart.map((item) =>
+        item.id === selectedVariant.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
       );
+    }
 
-      if (existingItem) {
-        // Update the quantity if the item already exists
-        return prevCart.map((item) =>
-          item.id === product.id &&
-          item.size === selectedVariant.size &&
-          item.scent === selectedScent
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      }
+    // Add a new item if it doesn't exist
+    const newItem: CartItem = {
+      id: selectedVariant.id, // Use the variant ID for unique identification
+      name: product.name,
+      size: selectedVariant.size,
+      scent: selectedScent,
+      price: selectedVariant.price,
+      quantity: quantity,
+      image: product.images ? product.images[0] : "",
+      variantId: selectedVariant.id, // Variant ID for further processing
+    };
 
-      // Add a new item if it doesn't exist
-      const newItem: CartItem = {
-        id: product.id,
-        name: product.name,
-        size: selectedVariant.size,
-        scent: selectedScent,
-        price: selectedVariant.price,
-        quantity: quantity,
-        image: product.images ? product.images[0] : "",
-      };
+    return [...prevCart, newItem];
+  });
 
-      return [...prevCart, newItem];
-    });
-
-    // Optionally open the cart drawer (uncomment if needed)
-    // setIsCartDrawerOpen(true);
-  };
+  // Optionally open the cart drawer (uncomment if needed)
+  // setIsCartDrawerOpen(true);
+};
+  
   const removeFromCart = (id: string) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
