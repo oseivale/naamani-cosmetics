@@ -76,6 +76,7 @@ export type Product = {
 
 export interface ProductCardProps {
   name: string;
+  mainImage: string;
   price: number;
   description: string;
   id: string;

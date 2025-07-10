@@ -15,6 +15,7 @@ export default function FeaturedProducts() {
             return (
               <ProductCard
                 key={product.id}
+                mainImage={product.images[0]}
                 name={product.name}
                 price={product.price}
                 description={product.description}
