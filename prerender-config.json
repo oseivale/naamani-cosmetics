@@ -1,0 +1,8 @@
+{
+    "forms": {
+      "contact": {
+        "name": "contact",
+        "path": "/contact"
+      }
+    }
+  }
