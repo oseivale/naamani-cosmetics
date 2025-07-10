@@ -1,7 +1,7 @@
 "use server";
 
-import { z } from "zod";
-import { emailFormSchema } from "./schema";
+// import { z } from "zod";
+// import { emailFormSchema } from "./schema";
 import { Resend } from "resend";
 import { NextApiRequest, NextApiResponse } from "next";
 

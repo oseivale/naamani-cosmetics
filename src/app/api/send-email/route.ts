@@ -1,9 +1,8 @@
-import { EmailTemplate } from "@/app/components/EmailTemplate";
 import { emailFormSchema } from "@/app/lib/schema";
-import { renderToHTML } from "next/dist/server/render";
+// import { renderToHTML } from "next/dist/server/render";
 import { NextResponse } from "next/server";
-import { render } from "@react-email/render"; // ✅ Converts React to HTML
-import React from "react";
+// import { render } from "@react-email/render"; // ✅ Converts React to HTML
+// import React from "react";
 
 export async function POST(req: Request) {
   try {

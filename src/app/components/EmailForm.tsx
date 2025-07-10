@@ -39,6 +39,7 @@ export default function EmailForm() {
         setStatus("error");
       }
     } catch (error) {
+      console.log(error)
       setStatus("error");
     }
   };
