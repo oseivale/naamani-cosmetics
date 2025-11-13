@@ -1,4 +1,6 @@
 // app/api/payments/moneris/preload/route.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextResponse } from "next/server";
 
 const isProd = process.env.MONERIS_ENV === "prod";
