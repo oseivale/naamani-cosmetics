@@ -1,4 +1,6 @@
 // app/api/payments/moneris/preload/route.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextResponse } from "next/server";
 
 const isProd = process.env.MONERIS_ENV === "prod";
@@ -54,12 +56,15 @@ export async function POST(req: Request) {
     }
 
     // Try to parse JSON, but guard against HTML / non-JSON bodies
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     let data: any;
     try {
       data = await res.json();
     } catch (e) {
       const text = await res.text();
       console.error("Moneris preload non-JSON response:", text.slice(0, 300));
+      console.log(e)
       return NextResponse.json(
         {
           error: "preload_invalid_response",
@@ -85,6 +90,8 @@ export async function POST(req: Request) {
 
     // Success 🎉
     return NextResponse.json({ ticket: data.ticket });
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   } catch (err: any) {
     console.error("Moneris preload unexpected error:", err);
     return NextResponse.json(
