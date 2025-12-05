@@ -1,6 +1,5 @@
-// app/api/payments/moneris/preload/route.ts
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+// app/api/payments/moneris/preload/route.ts
 import { NextResponse } from "next/server";
 
 const isProd = process.env.MONERIS_ENV === "prod";
@@ -20,19 +19,19 @@ export async function POST(req: Request) {
       ? "https://gateway.moneris.com"
       : "https://gatewayt.moneris.com";
 
-    // ✅ Correct endpoint for Moneris Checkout v2 preload
-    const endpoint = `${baseUrl}/chktv2/request/request.php`;
+    // ✅ Correct MCO Preload URL per docs
+    const endpoint = `${baseUrl}/chkt/request/request.php`;
 
     const payload = {
       store_id: process.env.MONERIS_STORE_ID,
       api_token: process.env.MONERIS_API_TOKEN,
-      checkout_id: process.env.MONERIS_CHECKOUT_ID, // ✅ use Checkout ID, not store_id
+      checkout_id: process.env.MONERIS_CHECKOUT_ID, // from MCO configurator
       txn_total: amount.toFixed(2),
       environment: isProd ? "prod" : "qa",
-      action: "preload",                             // ✅ required
+      action: "preload",
       order_no: String(orderId),
       cust_id: customer?.id ?? undefined,
-      // add other optional fields here (billing/shipping, dynamic_descriptor, etc.)
+      // optional: dynamic_descriptor, language, cart, contact_details, etc.
     };
 
     const res = await fetch(endpoint, {
@@ -42,10 +41,10 @@ export async function POST(req: Request) {
       cache: "no-store",
     });
 
-    // If Moneris throws, surface a clean error
     if (!res.ok) {
       const text = await res.text();
       console.error("Moneris preload HTTP error:", res.status, text.slice(0, 300));
+
       return NextResponse.json(
         {
           error: "preload_failed",
@@ -57,20 +56,35 @@ export async function POST(req: Request) {
       );
     }
 
-    // Response format: { "response": { "success": true, "ticket": "..." } }
-    const data = await res.json();
+    let data: any;
+    try {
+      data = await res.json();
+    } catch (e) {
+      const text = await res.text();
+      console.log(e)
+      console.error("Moneris preload non-JSON response:", text.slice(0, 300));
+      return NextResponse.json(
+        {
+          error: "preload_invalid_response",
+          detail: "Moneris returned an unexpected response.",
+          raw: process.env.NODE_ENV === "development" ? text : undefined,
+        },
+        { status: 502 }
+      );
+    }
 
-    const ticket =
-      data?.ticket ??
-      data?.response?.ticket ??
-      null;
+    // Docs: successful response shape:
+    // { "response": { "success": "true", "ticket": "..." } }
+    const response = data.response ?? data;
+    const success = response?.success;
+    const ticket = response?.ticket;
 
-    if (!ticket) {
-      console.error("Moneris preload missing ticket:", data);
+    if (String(success) !== "true" || !ticket) {
+      console.error("Moneris preload missing/failed ticket:", data);
       return NextResponse.json(
         {
           error: "preload_no_ticket",
-          detail: "Moneris did not return a checkout ticket.",
+          detail: "Moneris did not return a valid checkout ticket.",
           raw: process.env.NODE_ENV === "development" ? data : undefined,
         },
         { status: 502 }

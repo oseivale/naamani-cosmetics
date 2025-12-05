@@ -1,0 +1,235 @@
+/* === Global Layout === */
+.page {
+    background: #f7f7f7;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  
+  /* Titles */
+  .heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #222;
+  }
+  
+  /* === Important Notice Banner === */
+  .notice {
+    background: #fff3cd;
+    border: 1px solid #ffe29f;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .noticeTitle {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  
+  .noticeHighlight {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #8a6d3b;
+  }
+  
+  /* === Order Summary === */
+  .summary {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .summary h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .itemsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .itemsList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .itemLeft {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .itemName {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  
+  .itemVariant {
+    color: #555;
+    font-size: 0.85rem;
+  }
+  
+  .itemQty {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  
+  .itemPrice {
+    font-weight: 600;
+  }
+  
+  .totals {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .totals > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+  }
+  
+  .grandTotal {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* === Form Styling === */
+  .form section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Scoped form fields */
+  .form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  
+  .form input:focus {
+    outline: none;
+    border-color: #111;
+  }
+  
+  .sectionHeading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Grid Layout */
+  .gridTwo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .fullWidth {
+    grid-column: span 2;
+  }
+  
+  /* Checkbox Row */
+  .checkboxRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .helperText {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  /* Submit Button */
+  .submitButton {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background: #222;
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Fine print */
+  .finePrint {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* === Empty Cart State === */
+  .emptyState {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
+  .backToShop {
+    margin-top: 1.25rem;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  .backToShop:hover {
+    background: #333;
+  }
+  
+  /* === Responsive === */
+  @media (min-width: 640px) {
+    .gridTwo {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
