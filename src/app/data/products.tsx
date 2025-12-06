@@ -35,7 +35,7 @@ export const products = [
     ],
     variantHeading: `Choose Your Scent`,
     images: [
-      "/images/cleansing-oil.png",
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
     ],
@@ -116,7 +116,7 @@ export const products = [
     ],
     variantHeading: `Choose Your Scent`,
     images: [
-      "/images/body-butter.png",
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
@@ -164,6 +164,7 @@ export const products = [
     ],
     // variantHeading: `Choose Your Scent`,
     images: [
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
@@ -206,6 +207,7 @@ export const products = [
     ],
     // variantHeading: `Choose Your Scent`,
     images: [
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
@@ -249,6 +251,7 @@ export const products = [
       },
     ],
     images: [
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
@@ -293,6 +296,7 @@ export const products = [
       },
     ],
     images: [
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
@@ -328,6 +332,7 @@ export const products = [
     ],
     variantHeading: ``,
     images: [
+      "/images/content-pixie-WdJ4WnLxyDs-unsplash.jpg",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21.jpg?v=1604581404",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_02.jpg?v=1604581404&width=220",
       "https://venedorcitrus.myshopify.com/cdn/shop/products/ce535e88-c69c-4e07-8cb3-7f90c3ca7a21_05.jpg?v=1604581404&width=220",
