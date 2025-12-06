@@ -118,7 +118,7 @@ export function buildCustomerOrderEmail({
       <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f5f5; padding:24px 0;">
         <tr>
           <td align="center">
-            <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, sans-serif; color:#111827;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Helvetica, sans-serif; color:#111827;">
               <!-- Header -->
               <tr>
                 <td style="padding:20px 24px; background-color:#111111; color:#ffffff; text-align:center;">
