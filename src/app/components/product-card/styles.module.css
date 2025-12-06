@@ -42,8 +42,9 @@
 }
 
 .productCard img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 170px;
+  /* height: auto; */
   margin: 0 auto;
 }
 
