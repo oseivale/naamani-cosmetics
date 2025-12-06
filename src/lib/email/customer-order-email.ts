@@ -121,16 +121,10 @@ export function buildCustomerOrderEmail({
             <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, sans-serif; color:#111827;">
               <!-- Header -->
               <tr>
-                <td style="padding:20px 24px; background-color:#684d9a; color:#ffffff; text-align:center;">
+                <td style="padding:20px 24px; background-color:#111111; color:#ffffff; text-align:center;">
                   <h1 style="margin:0; font-size:20px; letter-spacing:1px; text-transform:uppercase;">
                     Naamani Cosmetics
                   </h1>
-                    <img 
-                        src="https://develop--naamani-cosmetics.netlify.app/images/NAAMANI-THIRD-LOGO.svg"
-                        alt="Naamani Cosmetics"
-                        width="140"
-                        style="display:block; margin:0 auto 8px;"
-                    />
                   <p style="margin:4px 0 0; font-size:12px; opacity:0.9;">
                     Naturally crafted skincare
                   </p>

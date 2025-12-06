@@ -21,12 +21,8 @@ export default function OrderConfirmationPage({
     return (
         <main className={styles.page}>
             <div className={styles.card}>
-                
-
                 <div className={styles.badge}>Thank you!</div>
-
                 <h1 className={styles.heading}>Your order has been submitted</h1>
-
                 <p className={styles.lead}>
                     We’ve received your order and sent you an email with payment
                     instructions.
