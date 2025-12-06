@@ -68,6 +68,7 @@
     justify-content: space-between;
     padding: 0.4rem 0;
     font-size: 0.9rem;
+    flex-direction: column;
 }
 
 .label {
@@ -163,5 +164,14 @@
     .primaryButton,
     .secondaryButton {
         min-width: 180px;
+    }
+
+    .infoRow {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4rem 0;
+        font-size: 0.9rem;
+        flex-direction: row;
+
     }
 }
