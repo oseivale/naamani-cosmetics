@@ -25,32 +25,30 @@ export default function HeroBanner() {
     <div className={styles.hero}>
       <div className={styles.heroContainer}>
         <div
-          className={`${styles.textSection} ${
-            animateTextSection ? styles.animateFadeIn : ""
-          }`}
+          className={`${styles.textSection} ${animateTextSection ? styles.animateFadeIn : ""
+            }`}
         >
           <p className={styles.subtitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Thoughtfully formulated with nature’s best for healthy, radiant skin.
           </p>
           <h1
-            className={`${styles.title} ${
-              animateTitle ? styles.animateTitle : ""
-            }`}
+            className={`${styles.title} ${animateTitle ? styles.animateTitle : ""
+              }`}
           >
-            <span>Fresh</span>
-            <span>and</span>
-            <span>Natural</span>
             <span>Skincare</span>
-            <span>For</span>
-            <span>Best</span>
-            <span>Result</span>
+            <span>Rooted</span>
+            <span>in</span>
+            <span>Nature,</span>
+            <span>Crafted</span>
+            <span>with</span>
+            <span>Care.</span>
+
           </h1>
           {/* <p>Cruelty Free | Paraben Free | Gluten Free</p> */}
           <Link
             href={"/products"}
-            className={`${styles.link} ${
-              animateTitle ? styles.animateTitle : ""
-            }`}
+            className={`${styles.link} ${animateTitle ? styles.animateTitle : ""
+              }`}
           >
             {" "}
             <span>Shop Now</span>{" "}
@@ -62,9 +60,8 @@ export default function HeroBanner() {
 
         <div className={styles.imageSection}>
           <div
-            className={`${styles.leftImage} ${
-              animateImages ? styles.animateSlideUp : ""
-            }`}
+            className={`${styles.leftImage} ${animateImages ? styles.animateSlideUp : ""
+              }`}
           >
             <Image
               className={styles.img}

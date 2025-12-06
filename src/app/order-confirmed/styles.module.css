@@ -1,0 +1,167 @@
+.page {
+    min-height: 100vh;
+    background: #f7f7f7;
+    padding: 2.5rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    /* border-radius: 16px; */
+    background-color: var(--naamani-purple);
+}
+
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 640px;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Top badge */
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.lead {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+/* Order info block */
+.infoBlock {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.label {
+    color: #6b7280;
+}
+
+.value {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Notice / next steps */
+.notice {
+    text-align: left;
+    background: #fff7ed;
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem;
+    border: 1px solid #fed7aa;
+    margin-bottom: 2rem;
+}
+
+.noticeTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #9a3412;
+}
+
+.noticeText {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.noticeHighlight {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: #92400e;
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primaryButton {
+    background: #000000;
+    color: #ffffff;
+}
+
+.primaryButton:hover {
+    background: #111827;
+}
+
+.secondaryButton {
+    background: transparent;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+}
+
+.secondaryButton:hover {
+    background: #f3f4f6;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .card {
+        padding: 3rem 3rem;
+    }
+
+    .actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        min-width: 180px;
+    }
+}

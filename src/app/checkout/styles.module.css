@@ -1,4 +1,4 @@
-/* === Global Layout === */
+/* Layout */
 .page {
     background: #f7f7f7;
     min-height: 100vh;
@@ -8,36 +8,36 @@
   }
   
   .container {
-    background: #fff;
+    background: #ffffff;
     width: 100%;
-    max-width: 900px;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 960px;
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
   }
   
-  /* Titles */
+  /* Heading */
   .heading {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
     text-align: center;
-    color: #222;
+    margin-bottom: 1.5rem;
+    color: #111827;
   }
   
-  /* === Important Notice Banner === */
+  /* Notice banner */
   .notice {
     background: #fff3cd;
-    border: 1px solid #ffe29f;
+    border: 1px solid #ffec99;
+    border-radius: 10px;
     padding: 1rem 1.25rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.9rem;
   }
   
   .noticeTitle {
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
   
   .noticeHighlight {
@@ -46,32 +46,64 @@
     color: #8a6d3b;
   }
   
-  /* === Order Summary === */
+  /* Summary + Accordion */
   .summary {
     background: #fafafa;
-    border: 1px solid #e5e5e5;
-    padding: 1.25rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
     margin-bottom: 2rem;
+    overflow: hidden;
   }
   
-  .summary h2 {
-    font-size: 1.25rem;
+  .accordionHeader {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border: none;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .accordionTitle {
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    color: #111827;
   }
   
+  .accordionIcon {
+    transition: transform 0.25s ease;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  
+  .accordionIconOpen {
+    transform: rotate(180deg);
+  }
+  
+  .accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordionContentOpen {
+    max-height: 600px; /* enough for typical cart; adjust if needed */
+  }
+  
+  /* Summary contents */
   .itemsList {
     list-style: none;
+    padding: 0.75rem 1.1rem 0.25rem;
     margin: 0;
-    padding: 0;
   }
   
   .itemsList li {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #e5e5e5;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
   }
   
   .itemLeft {
@@ -81,17 +113,17 @@
   
   .itemName {
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
   
   .itemVariant {
-    color: #555;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    color: #6b7280;
   }
   
   .itemQty {
-    font-size: 0.85rem;
-    color: #777;
+    font-size: 0.8rem;
+    color: #9ca3af;
   }
   
   .itemPrice {
@@ -99,57 +131,43 @@
   }
   
   .totals {
-    margin-top: 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 1.1rem 0.9rem;
+    font-size: 0.9rem;
   }
   
   .totals > div {
     display: flex;
     justify-content: space-between;
-    padding: 0.35rem 0;
+    padding: 0.25rem 0;
   }
   
   .grandTotal {
+    border-top: 1px solid #d1d5db;
+    margin-top: 0.35rem;
+    padding-top: 0.45rem;
     font-weight: 700;
-    font-size: 1.1rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid #ccc;
   }
   
-  /* === Form Styling === */
-  .form section {
+  /* Form */
+  .form {
+    margin-top: 1.5rem;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .formSection {
     margin-bottom: 2rem;
   }
   
-  /* Scoped form fields */
-  .form label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
-  
-  .form input {
-    width: 100%;
-    padding: 0.55rem 0.75rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background: #fff;
-    font-size: 0.95rem;
-  }
-  
-  .form input:focus {
-    outline: none;
-    border-color: #111;
-  }
-  
   .sectionHeading {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
+    color: #111827;
   }
   
-  /* Grid Layout */
+  /* Grid: 1 column on mobile, 2 on larger screens */
   .gridTwo {
     display: grid;
     grid-template-columns: 1fr;
@@ -157,40 +175,62 @@
   }
   
   .fullWidth {
-    grid-column: span 2;
+    grid-column: span 1;
   }
   
-  /* Checkbox Row */
+  /* Scope label and input to form for CSS modules purity */
+  .form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: #374151;
+  }
+  
+  .form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    font-size: 0.9rem;
+  }
+  
+  .form input:focus {
+    outline: none;
+    border-color: #111827;
+  }
+  
+  /* Checkbox row */
   .checkboxRow {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    gap: 0.45rem;
+    font-size: 0.85rem;
     margin-bottom: 0.25rem;
   }
   
   .helperText {
-    font-size: 0.8rem;
-    color: #666;
+    font-size: 0.78rem;
+    color: #6b7280;
     margin-bottom: 1rem;
   }
   
-  /* Submit Button */
+  /* Submit */
   .submitButton {
     width: 100%;
-    background: #000;
-    color: #fff;
-    padding: 0.75rem;
-    font-size: 1rem;
-    margin-top: 1.5rem;
+    max-width: 260px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 6px;
     border: none;
     cursor: pointer;
-  }
-  
-  .submitButton:hover {
-    background: #222;
+    display: block;
+    margin: 0 auto;
   }
   
   .submitButton:disabled {
@@ -198,15 +238,18 @@
     cursor: not-allowed;
   }
   
-  /* Fine print */
+  .submitButton:hover:not(:disabled) {
+    background: #111827;
+  }
+  
   .finePrint {
-    margin-top: 0.75rem;
-    font-size: 0.8rem;
-    color: #555;
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    color: #6b7280;
     text-align: center;
   }
   
-  /* === Empty Cart State === */
+  /* Empty state */
   .emptyState {
     text-align: center;
     margin-top: 4rem;
@@ -216,20 +259,48 @@
     margin-top: 1.25rem;
     display: inline-block;
     padding: 0.6rem 1.2rem;
-    background: #111;
-    color: #fff;
-    border-radius: 6px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 999px;
     text-decoration: none;
+    font-size: 0.9rem;
   }
   
   .backToShop:hover {
-    background: #333;
+    background: #111827;
   }
   
-  /* === Responsive === */
+  /* Responsive improvements */
   @media (min-width: 640px) {
+    .container {
+      padding: 2.5rem 2.25rem;
+    }
+  
     .gridTwo {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem 1.5rem;
+    }
+  
+    .fullWidth {
+      grid-column: span 2;
+    }
+  
+    .formSection {
+      margin-bottom: 2.25rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 3rem 3rem;
+    }
+  
+    .form {
+      margin-top: 2rem;
+    }
+  
+    .gridTwo {
+      gap: 1.3rem 2rem;
     }
   }
   

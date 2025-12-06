@@ -27,7 +27,7 @@ export default function Navigation() {
     <header className={styles.header}>
       <div className={styles.banner}>
         <Shipping />
-        <h3>Free shipping on CAD $50+</h3>
+        <h3>Free shipping when you spend CAD $125+</h3>
       </div>
       <div className={styles.container}>
         {/* Hamburger Menu - Mobile Only */}

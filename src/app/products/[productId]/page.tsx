@@ -105,7 +105,7 @@ export default async function ProductPage({
               {
                 title: "Shipping & Returns",
                 content:
-                  "Free shipping on orders over $50. Easy returns within 30 days of purchase. See our return policy for more details.",
+                  "Free shipping on orders over $125. Easy returns within 30 days of purchase. See our return policy for more details.",
               },
             ]}
           />
