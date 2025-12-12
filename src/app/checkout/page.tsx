@@ -310,6 +310,7 @@ import { useCart } from "../contexts/cart";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Important } from "../icons/important";
 
 export default function CheckoutPage() {
   const { cart, totalAmount, totalItems, clearCart } = useCart();
@@ -427,16 +428,19 @@ export default function CheckoutPage() {
 
         {/* 🔔 Manual payment notice */}
         <section className={styles.notice}>
-          <p className={styles.noticeTitle}>Important</p>
-          <p>
+        <div className={styles.noticeWrapper}>
+          <Important />
+          <p className={styles.noticeTitle}>Important Notice</p>
+          </div>
+         
+         <p>
             Naamani Cosmetics uses{" "}
             <strong>Interac e-Transfer (sent separately)</strong> for payment.
             After you submit this form, you&apos;ll receive an email with your
             order number and payment instructions.
           </p>
           <p className={styles.noticeHighlight}>
-            Your order is <strong>pending</strong> and will not be processed
-            until your e-transfer payment is received.
+            Your order is <strong>pending</strong> and will be processed after your e-transfer payment is received.
           </p>
         </section>
 
@@ -588,6 +592,7 @@ export default function CheckoutPage() {
                 type="checkbox"
                 name="billingSameAsShipping"
                 checked={billingSameAsShipping}
+                className={styles.checkBoxInput}
                 onChange={(e) => setBillingSameAsShipping(e.target.checked)}
               />
               <span>Billing address is the same as shipping</span>

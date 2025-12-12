@@ -5,57 +5,65 @@
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
-  }
-  
-  .container {
+}
+
+.container {
     background: #ffffff;
     width: 100%;
     max-width: 960px;
     padding: 2rem 1.5rem;
     border-radius: 14px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  }
-  
-  /* Heading */
-  .heading {
+}
+
+/* Heading */
+.heading {
     font-size: 1.9rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 1.5rem;
     color: #111827;
-  }
-  
-  /* Notice banner */
-  .notice {
+}
+
+/* Notice banner */
+.notice {
     background: #fff3cd;
     border: 1px solid #ffec99;
     border-radius: 10px;
     padding: 1rem 1.25rem;
     margin-bottom: 1.75rem;
     font-size: 0.9rem;
-  }
-  
-  .noticeTitle {
+}
+
+.noticeWrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.noticeTitle {
     font-weight: 700;
-    margin-bottom: 0.35rem;
-  }
-  
-  .noticeHighlight {
+    color: #8a6d3b;
+    font-size: 1.3rem;
+    /* margin-bottom: 0.35rem; */
+}
+
+.noticeHighlight {
     margin-top: 0.5rem;
     font-weight: 600;
     color: #8a6d3b;
-  }
-  
-  /* Summary + Accordion */
-  .summary {
+}
+
+/* Summary + Accordion */
+.summary {
     background: #fafafa;
     border-radius: 10px;
     border: 1px solid #e5e7eb;
     margin-bottom: 2rem;
     overflow: hidden;
-  }
-  
-  .accordionHeader {
+}
+
+.accordionHeader {
     width: 100%;
     padding: 0.9rem 1.1rem;
     border: none;
@@ -64,130 +72,138 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-  }
-  
-  .accordionTitle {
+}
+
+.accordionTitle {
     font-size: 0.95rem;
     font-weight: 600;
     color: #111827;
-  }
-  
-  .accordionIcon {
+}
+
+.accordionIcon {
     transition: transform 0.25s ease;
     font-size: 0.9rem;
     color: #6b7280;
-  }
-  
-  .accordionIconOpen {
+}
+
+.accordionIconOpen {
     transform: rotate(180deg);
-  }
-  
-  .accordionContent {
+}
+
+.accordionContent {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-  }
-  
-  .accordionContentOpen {
-    max-height: 600px; /* enough for typical cart; adjust if needed */
-  }
-  
-  /* Summary contents */
-  .itemsList {
+}
+
+.accordionContentOpen {
+    max-height: 600px;
+    /* enough for typical cart; adjust if needed */
+}
+
+/* Summary contents */
+.itemsList {
     list-style: none;
     padding: 0.75rem 1.1rem 0.25rem;
     margin: 0;
-  }
-  
-  .itemsList li {
+}
+
+.itemsList li {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
     border-bottom: 1px solid #e5e7eb;
-  }
-  
-  .itemLeft {
+}
+
+.itemLeft {
     display: flex;
     flex-direction: column;
-  }
-  
-  .itemName {
+}
+
+.itemName {
     font-weight: 600;
     margin-bottom: 0.15rem;
-  }
-  
-  .itemVariant {
+}
+
+.itemVariant {
     font-size: 0.8rem;
     color: #6b7280;
-  }
-  
-  .itemQty {
+}
+
+.itemQty {
     font-size: 0.8rem;
     color: #9ca3af;
-  }
-  
-  .itemPrice {
+}
+
+.itemPrice {
     font-weight: 600;
-  }
-  
-  .totals {
+}
+
+.totals {
     padding: 0.5rem 1.1rem 0.9rem;
     font-size: 0.9rem;
-  }
-  
-  .totals > div {
+}
+
+.totals>div {
     display: flex;
     justify-content: space-between;
     padding: 0.25rem 0;
-  }
-  
-  .grandTotal {
+}
+
+.grandTotal {
     border-top: 1px solid #d1d5db;
     margin-top: 0.35rem;
     padding-top: 0.45rem;
     font-weight: 700;
-  }
-  
-  /* Form */
-  .form {
+}
+
+/* Form */
+.form {
     margin-top: 1.5rem;
     max-width: 860px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .formSection {
+}
+
+.formSection {
     margin-bottom: 2rem;
-  }
-  
-  .sectionHeading {
+}
+
+.checkBoxInput {
+    height: 16px;
+    justify-content: flex-start;
+    display: inline-block;
+    width: 3% !important;
+}
+
+.sectionHeading {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.9rem;
     color: #111827;
-  }
-  
-  /* Grid: 1 column on mobile, 2 on larger screens */
-  .gridTwo {
+}
+
+/* Grid: 1 column on mobile, 2 on larger screens */
+.gridTwo {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  
-  .fullWidth {
+}
+
+.fullWidth {
     grid-column: span 1;
-  }
-  
-  /* Scope label and input to form for CSS modules purity */
-  .form label {
+}
+
+/* Scope label and input to form for CSS modules purity */
+.form label {
     display: block;
     font-size: 0.85rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
     color: #374151;
-  }
-  
-  .form input {
+}
+
+.form input {
     width: 100%;
     box-sizing: border-box;
     padding: 0.55rem 0.75rem;
@@ -195,112 +211,115 @@
     border: 1px solid #d1d5db;
     background: #ffffff;
     font-size: 0.9rem;
-  }
-  
-  .form input:focus {
+}
+
+.form input:focus {
     outline: none;
     border-color: #111827;
-  }
-  
-  /* Checkbox row */
-  .checkboxRow {
+}
+
+/* Checkbox row */
+.checkboxRow {
     display: flex;
     align-items: center;
     gap: 0.45rem;
     font-size: 0.85rem;
     margin-bottom: 0.25rem;
-  }
-  
-  .helperText {
+}
+
+.helperText {
     font-size: 0.78rem;
     color: #6b7280;
     margin-bottom: 1rem;
-  }
-  
-  /* Submit */
-  .submitButton {
+}
+
+/* Submit */
+.submitButton {
     width: 100%;
     max-width: 260px;
-    background: #000000;
+    background: var(--naamani-purple);
     color: #ffffff;
-    border-radius: 999px;
-    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
     font-size: 0.95rem;
     font-weight: 600;
     border: none;
     cursor: pointer;
     display: block;
     margin: 0 auto;
-  }
-  
-  .submitButton:disabled {
+    transition: all 250ms;
+}
+
+.submitButton:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
-  
-  .submitButton:hover:not(:disabled) {
-    background: #111827;
-  }
-  
-  .finePrint {
+}
+
+.submitButton:hover:not(:disabled) {
+    background: var(--naamani-green);
+    color: var(--naamani-purple);
+}
+
+.finePrint {
     margin-top: 0.7rem;
     font-size: 0.78rem;
     color: #6b7280;
     text-align: center;
-  }
-  
-  /* Empty state */
-  .emptyState {
+}
+
+/* Empty state */
+.emptyState {
     text-align: center;
     margin-top: 4rem;
-  }
-  
-  .backToShop {
+}
+
+.backToShop {
     margin-top: 1.25rem;
     display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background: #000000;
+    padding: 0.6rem 1.5rem;
+    background: var(--naamani-purple);
     color: #ffffff;
-    border-radius: 999px;
+    border-radius: 10px;
     text-decoration: none;
     font-size: 0.9rem;
-  }
-  
-  .backToShop:hover {
-    background: #111827;
-  }
-  
-  /* Responsive improvements */
-  @media (min-width: 640px) {
+    transition: all 350ms ease;
+}
+
+.backToShop:hover {
+    background: var(--naamani-green);
+    color: var(--naamani-purple);
+}
+
+/* Responsive improvements */
+@media (min-width: 640px) {
     .container {
-      padding: 2.5rem 2.25rem;
+        padding: 2.5rem 2.25rem;
     }
-  
+
     .gridTwo {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem 1.5rem;
     }
-  
+
     .fullWidth {
-      grid-column: span 2;
+        grid-column: span 2;
     }
-  
+
     .formSection {
-      margin-bottom: 2.25rem;
+        margin-bottom: 2.25rem;
     }
-  }
-  
-  @media (min-width: 1024px) {
+}
+
+@media (min-width: 1024px) {
     .container {
-      padding: 3rem 3rem;
+        padding: 3rem 3rem;
     }
-  
+
     .form {
-      margin-top: 2rem;
+        margin-top: 2rem;
     }
-  
+
     .gridTwo {
-      gap: 1.3rem 2rem;
+        gap: 1.3rem 2rem;
     }
-  }
-  
+}
